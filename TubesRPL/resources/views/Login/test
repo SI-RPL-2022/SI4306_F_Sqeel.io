@@ -1,0 +1,11 @@
+table role
+
+role::create([
+    'namaRole'=> 'Student',
+    
+])
+
+role::create([
+    'namaRole'=> 'Mentor',
+    
+])

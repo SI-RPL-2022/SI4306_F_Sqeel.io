@@ -1,0 +1,83 @@
+*{
+    text-decoration: none;
+    font-family: 'Calibri';
+}
+
+.nav-link{
+    color: black;
+    font-weight: 500;
+}
+
+
+
+/* Style the search field */
+form.search-bar input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid rgb(231, 231, 231);
+    border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    float: left;
+    width: 700px;
+    height: 40px;
+    background: #ffffff;
+  }
+  
+  /* Style the submit button */
+  form.search-bar button {
+    float: left;
+    height: 40px;
+    padding: 5px;
+    padding-left: 15px;
+    background: white;
+    color: #9C9AAA;
+    font-size: 17px;
+    border: 1px solid rgb(231, 231, 231);
+    border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+  }
+  
+  form.search-bar input[type=text]:focus{
+   
+  }
+  
+  /* Clear floats */
+  form.search-bar::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.profile{
+    width: 30px;
+    border-radius: 50%;
+    
+}
+footer{
+    background-color: #1D293F;
+    color: white;
+    padding: 15px;
+    font-weight: 300;
+    font-size: small;
+}
+
+.lib-subtittle{
+    color: #9896a5;
+}
+#list{
+    margin-left: 800px;
+}
+
+.card{
+    max-width: 250px;
+    border: none;
+    border-radius: 10px;
+}
+
+.kategori{
+    text-decoration: none;
+    color: #1D293F;
+}

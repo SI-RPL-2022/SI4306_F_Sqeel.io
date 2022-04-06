@@ -1,0 +1,43 @@
+body{
+    background-color: #F7F8FA;
+    font-family: 'Calibri';
+}
+
+.container{
+    background-color: #FFFFFF;
+    width: 28%;
+    padding: 30px;
+    position: relative;
+    top:5em;
+}
+
+.btn{
+    background-color: #B48BF0;
+    border: none;
+    color: white;
+    padding: 1rem;
+    
+}
+
+.btn, .form-control{
+    border-radius: 0.4rem;
+}
+.btn:hover{
+    background-color: #B48BF0;
+    color: white; !important
+}
+
+.form-control{
+    padding: 1rem;
+}
+
+a{
+    color: #5454D4 ;
+    text-decoration: none;
+}
+
+form h4{
+    font-weight: bold;
+    font-size: 38px;
+}
+
