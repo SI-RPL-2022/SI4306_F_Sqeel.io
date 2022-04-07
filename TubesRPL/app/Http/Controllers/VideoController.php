@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\video;
 use App\Http\Requests\StorevideoRequest;
 use App\Http\Requests\UpdatevideoRequest;
-use App\Models\playlist;
 
 class VideoController extends Controller
 {
@@ -49,14 +47,7 @@ class VideoController extends Controller
      */
     public function show(video $video)
     {
-
-
-        // dd($video->created_at->format('l, d F Y'));
-        return view('Student.materi', [
-            'title' => $video->judulVideo,
-            'video' => $video,
-            'playlist' => $video->playlist
-        ]);
+        //
     }
 
     /**
