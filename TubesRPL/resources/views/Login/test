@@ -9,3 +9,83 @@ role::create([
     'namaRole'=> 'Mentor',
     
 ])
+
+
+
+
+video::create([
+    'idvideo'=> 'u7zS2XpMpsc',
+    'playlist_id' => 1,
+    'judulVideo'=>'test'
+    
+])
+
+
+
+
+
+video::create([
+    'idvideo'=> 'HqAMb6kqlLs',
+    'playlist_id' => 1,
+    'judulVideo'=>'test'
+    
+])
+
+video::create([
+    'idvideo'=> 'pZqk57Xvujs',
+    'playlist_id' => 1,
+    'judulVideo'=>'test'
+    
+])
+
+playlist::create([
+    'judul'=> 'Belajar Laravel',
+    'user_id' => 1,
+    'kategori_id'=>1
+])
+
+video::create([
+    'idvideo'=> '8VZ4vPjeHec',
+    'playlist_id' => 2,
+    'judulVideo'=>'Belajar Boostrap'
+    
+])
+
+video::create([
+    'idvideo'=> 'Y5CUzvJOlp0',
+    'playlist_id' => 2,
+    'judulVideo'=>'Belajar Boostrap 2'
+    
+])
+
+
+playlist::create([
+    'judul'=> 'Belajar Boostrap',
+    'user_id' => 1,
+    'kategori_id'=>1
+])
+
+asik asik
+
+
+
+video::create([
+    'idvideo'=> '13ARO0HDZsQ',
+    'playlist_id' => 3,
+    'judulVideo'=>'Safe & Sound'
+    
+])
+
+video::create([
+    'idvideo'=> 'dUbeTUoQ7f4',
+    'playlist_id' => 3,
+    'judulVideo'=>'Raja Mexico'
+    
+])
+
+
+playlist::create([
+    'judul'=> 'Asik Asik',
+    'user_id' => 1,
+    'kategori_id'=>10
+])

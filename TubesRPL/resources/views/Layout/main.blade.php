@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse ms-5" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link ms-2" href="#">Library</a>
+                        <a class="nav-link ms-2" href="/library">Library</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ms-3" href="#">My Learning</a>
@@ -56,7 +56,7 @@
     </nav>
 
     {{-- <div class="">
-               
+        
     </div> --}}
 
 
@@ -69,7 +69,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-    <footer>
+    <footer class="mt-5">
         <center>&#0169 Kelompok RPL 2022. All rights Reserved</center>
     </footer>
 </body>
