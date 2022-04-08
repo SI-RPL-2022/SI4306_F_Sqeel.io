@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/library/{kategori}', [KategoriController::class, 'show']);
     Route::get('/video/{video:idVideo}', [VideoController::class, 'show']);
     Route::get('/student/index', [UserController::class, 'index']);
     Route::get('/wrong', function () {
