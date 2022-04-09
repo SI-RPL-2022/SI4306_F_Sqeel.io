@@ -10,8 +10,34 @@ role::create([
     
 ])
 
+kategori
+Kategori::create([
+    'namaKategori'=> 'Web Development',
+])
+
+Kategori::create([
+    'namaKategori'=> 'Design',
+])
+
+Kategori::create([
+    'namaKategori'=> 'Marketing',
+])
+
+Kategori::create([
+    'namaKategori'=> 'Photography',
+])
+
+Kategori::create([
+    'namaKategori'=> 'Mobile Development',
+])
+
+Kategori::create([
+    'namaKategori'=> 'Finance',
+])
 
 
+
+playlist dan video
 
 video::create([
     'idvideo'=> 'u7zS2XpMpsc',
@@ -64,6 +90,38 @@ playlist::create([
     'user_id' => 1,
     'kategori_id'=>1
 ])
+
+
+playlist::create([
+    'judul'=> 'Belajar Javascript',
+    'user_id' => 1,
+    'kategori_id'=>1
+])
+
+playlist::create([
+    'judul'=> 'Belajar NodeJs',
+    'user_id' => 1,
+    'kategori_id'=>1
+])
+
+playlist::create([
+    'judul'=> 'Belajar Jango',
+    'user_id' => 1,
+    'kategori_id'=>1
+])
+
+playlist::create([
+    'judul'=> 'Belajar React JS',
+    'user_id' => 1,
+    'kategori_id'=>1
+])
+
+playlist::create([
+    'judul'=> 'Belajar Symphony',
+    'user_id' => 1,
+    'kategori_id'=>1
+])
+
 
 asik asik
 

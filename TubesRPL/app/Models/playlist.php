@@ -10,10 +10,18 @@ class playlist extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function Kategori(){
-        return $this->belongsTo(Kategori::class,'kategori_id');
+    public function Kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'kategori_id');
     }
-    public function video(){
+
+    public function user()
+    {
+        return $this->belongsTo(user::class, 'user_id');
+    }
+
+    public function video()
+    {
         return $this->hasMany(video::class);
     }
 }

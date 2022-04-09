@@ -1,24 +1,30 @@
 @extends('Layout.main')
 @section('content')
-<div class="m-4 mb-5">
-    <center>
-        <h1>Category</h1>
-        <p class="lib-subtittle">Browse our entire course collection</p>
-    </center>
-</div>
-<div class="container" style="width: 65%">
-    <div class="row row-cols-md-3 mb-5">
-        <div class="col">
-            <a href="/materi/{playlist}" class="kategori">
-                <div class="card" id="web">
-                    <img src="/images/kategori/web.png" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Web Develompent</h5>
-                        <p class="card-text">x Courses</p>
-                    </div>
-                </div>
-            </a>
-        </div>
+    <div class="m-4 mb-5">
+        <center>
+            <h1>{{ $kategori->namaKategori }}</h1>
+            <p class="lib-subtittle">Browse our entire {{ $kategori->namaKategori }} courses collection</p>
+        </center>
     </div>
-</div>
+    <div class="container">
+        <center>
+            <div class="row row-cols-3" style="width: 80%">
+                @foreach ($kategori->playlist as $playlist)
+                    <div class="col">
+                        <a href="/materi/" class="kategori">
+                            <div class="card" id="web">
+                                <img src="/images/kategori/web.png" class="card-img-top" alt="...">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">{{ $playlist->judul }}</h5>
+                                    <p class="card-text">by: {{ $playlist->user->nama }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+
+            </div>
+        </center>
+
+    </div>
 @endsection

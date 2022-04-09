@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
-use App\Http\Requests\StoreKategoriRequest;
-use App\Http\Requests\UpdateKategoriRequest;
+use App\Models\Enroll;
+use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class EnrollController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,7 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('Student.library', [
-            'title' => 'Sqeel.io | Library',
-            'kategoris' => kategori::all()
-        ]);
+        //
     }
 
     /**
@@ -34,10 +30,10 @@ class KategoriController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreKategoriRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreKategoriRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -45,24 +41,21 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Enroll  $enroll
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show(Enroll $enroll)
     {
-        return view('Student.kategori', [
-            'title' => $kategori->namaKategori,
-            'kategori' => $kategori
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Enroll  $enroll
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit(Enroll $enroll)
     {
         //
     }
@@ -70,11 +63,11 @@ class KategoriController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateKategoriRequest  $request
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Enroll  $enroll
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateKategoriRequest $request, Kategori $kategori)
+    public function update(Request $request, Enroll $enroll)
     {
         //
     }
@@ -82,10 +75,10 @@ class KategoriController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Enroll  $enroll
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy(Enroll $enroll)
     {
         //
     }
