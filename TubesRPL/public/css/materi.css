@@ -1,0 +1,47 @@
+body{
+    background-color: #FFFFFF;
+    font-family: 'Helvetica Neue';
+}
+
+.container{
+    background-color: #FFFFFF;
+    width: 40%;
+    padding: 30px;
+    position: relative;
+    top:5em;
+}
+
+input{
+    height: 50px;
+}
+
+.file{
+    visibility: hidden;
+    position: absolute;
+}
+
+.browse{
+    color: #fff;
+    background: #CECECE;    
+}
+
+.cancel{
+    background: #FFFFFF;
+    border: 1px solid #EAE9F2;
+    color: #9C9AAA;
+    margin-right: 5px;
+    height: 30px;
+}
+
+.create{
+    background: #B48BF0;
+    color: #FFFFFF;
+    height: 30px;
+
+}
+
+.btn{
+    float: right;
+    height: 50px;
+}
+
