@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId("playlist_id");
             $table->string("judulVideo");
+            $table->string('deskripsi');
         });
     }
 

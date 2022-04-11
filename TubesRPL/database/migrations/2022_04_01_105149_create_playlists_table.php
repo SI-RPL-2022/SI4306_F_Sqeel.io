@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("judul");
             $table->foreignId("user_id");
             $table->foreignId("kategori_id");
+            $table->string('deskripsi');
         });
     }
 
