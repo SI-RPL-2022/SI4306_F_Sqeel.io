@@ -96,9 +96,46 @@ footer{
     margin-top: auto;
   }
 
+
+/* Untuk Halaman index.Materi */
+.webdev{
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
+    margin-top: 1.5rem;
+}
+
+.deskripsi{
+    color: #9C9AAA;
+}
+
+.deskripsi p{
+    color: #9C9AAA;
+    text-align: justify;
+}
+
+.enroll{
+    background-color: #B48BF0;
+    color: white;
+    border: none;
+}
+
+.enroll:hover{
+    background-color: #8c66c5;
+    color: white;
+}
+.rounded-pill{
+    border: none;
+    color: #748FED;
+    background: #ece8f3;
+}
+
+.col-7 .border{
+    width: 38rem;
+}
+
+
 /* .listvid:hover{
     background-color: #9896a5;
-   
 }
 
 
