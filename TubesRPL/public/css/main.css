@@ -59,6 +59,7 @@ form.search-bar input[type=text] {
 }
 footer{
     background-color: #1D293F;
+    height: 3.5rem;
     color: white;
     padding: 15px;
     font-weight: 300;
