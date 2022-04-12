@@ -42,7 +42,8 @@ playlist dan video
 video::create([
     'idvideo'=> 'u7zS2XpMpsc',
     'playlist_id' => 1,
-    'judulVideo'=>'test'
+    'judulVideo'=>'Belajar Laravel 1',
+    'deskripsi' => 'Belajar Laravel bagian 1'
     
 ])
 
@@ -53,21 +54,22 @@ video::create([
 video::create([
     'idvideo'=> 'HqAMb6kqlLs',
     'playlist_id' => 1,
-    'judulVideo'=>'test'
-    
+    'judulVideo'=>'Belajar Laravel 2',
+    'deskripsi' => 'Belajar Laravel bagian 2'
 ])
 
 video::create([
     'idvideo'=> 'pZqk57Xvujs',
     'playlist_id' => 1,
-    'judulVideo'=>'test'
-    
+    'judulVideo'=>'Belajar Laravel 3',
+    'deskripsi' => 'Belajar Laravel bagian 3'
 ])
 
 playlist::create([
     'judul'=> 'Belajar Laravel',
     'user_id' => 1,
-    'kategori_id'=>1
+    'kategori_id'=>1,
+    'deskripsi' => 'Belajar Laravel Bersama'
 ])
 
 video::create([

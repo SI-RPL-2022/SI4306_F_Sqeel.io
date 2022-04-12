@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
@@ -30,11 +31,8 @@ Route::middleware(['auth'])->group(function () {
         ]);
     });
     Route::get('/logout', [loginController::class, 'logout']);
-    Route::get('/library', function () {
-        return view('Student.library', [
-            'title' => 'Sqeel.io | Library'
-        ]);
-    });
+    Route::get('/library', [KategoriController::class, 'index']);
+    Route::get('/library/{kategori:namaKategori}', [KategoriController::class, 'show']);
 });
 
 Route::get('/signup', [RegisterController::class, 'index']);
