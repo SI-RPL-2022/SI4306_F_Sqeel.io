@@ -20,7 +20,8 @@ return new class extends Migration
             $table->integer('role_id');
             $table->integer("path_id")->nullable();
             $table->string('password');
-            $table->string('profile');
+            $table->string('profile')->default('profile.jpg');
+            $table->string('bio')->nullable();
             $table->string("email")->unique();
             $table->timestamps();
         });

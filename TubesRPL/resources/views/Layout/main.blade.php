@@ -36,7 +36,8 @@
 
                     @auth
                         <li class="nav-item">
-                            <img src="/images/dummy.jpg" class="profile ms-3 mt-1 me-1" alt="">
+                            <img src=" /storage/profile/{{ auth()->user()->profile }}" width="30px" height="30px"
+                                class="profile ms-3 mt-1 me-1" alt="">
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
@@ -45,7 +46,8 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a class="dropdown-item" href="#">User Dashboard</a></li>
-                                <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                                <li><a class="dropdown-item" href="student/profile/{{ auth()->user()->id }}">Edit
+                                        Profile</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -65,9 +67,7 @@
         </div>
     </nav>
 
-    {{-- <div class="">
-        
-    </div> --}}
+
 
 
     <div class="container" id="page-container">

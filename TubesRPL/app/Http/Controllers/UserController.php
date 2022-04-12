@@ -65,9 +65,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('Student.profile', [
+            'title' => 'Sqeel.io | Edit Profile',
+            'user' => $user
+        ]);
     }
 
     /**
@@ -79,7 +82,22 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->hasFile('profile')) {
+            $filename = $request->nama . '.jpg';
+            $request->profile->storeAs('profile', $filename, 'public');
+        }
+
+        $data = [
+            'nama' => $request->nama,
+            'profile' => $filename,
+            'bio' => $request->bio,
+
+        ];
+
+        User::where('id', $id)
+            ->update($data);
+
+        return redirect('/');
     }
 
     /**
