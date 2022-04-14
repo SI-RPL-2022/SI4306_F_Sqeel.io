@@ -3,6 +3,7 @@
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Routing\RouteGroup;
@@ -33,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [loginController::class, 'logout']);
     Route::get('/library', [KategoriController::class, 'index']);
     Route::get('/library/{kategori:namaKategori}', [KategoriController::class, 'show']);
+    Route::get('/materi/{playlist}', [PlaylistController::class, 'show']);
 });
 
 Route::get('/signup', [RegisterController::class, 'index']);

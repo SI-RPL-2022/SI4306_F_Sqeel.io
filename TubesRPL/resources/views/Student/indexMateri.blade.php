@@ -7,24 +7,15 @@
                 <span><img src="/images/logo/Web development.png" style="padding-bottom: 3px">
                     <b class="ms-2 fs-5">Web
                         Development</b></span>
-                <h4 class="webdev">The Complete Web Development Program</h4>
+                <h4 class="webdev">{{ $playlist->judul }}</h4>
                 <div style="width: 39rem">
-                    <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
-                        delectus
-                        dolorem
-                        dolores eius vero
-                        deserunt asperiores beatae ratione libero, quas sapiente quisquam animi laudantium officia tempore
-                        est
-                        eaque aliquam provident natus placeat facere dolorum aspernatur. Beatae.</p>
+                    <p class="deskripsi">{{ $playlist->deskripsi }}</p>
                 </div>
                 <div class="border rounded-3 " style="padding:2rem 0px; padding-right:0.7rem;padding-left:1rem">
-                    <span><img src="/images/profil/dummy2.png" style="margin-right:0.8rem;"><b>Angela Yu</b></span>
+                    <span><img class="profile" src="/storage/profile/{{ $playlist->user->profile }}"
+                            style="margin-right:0.8rem;"><b>{{ $playlist->user->nama }}</b></span>
                     <button class="rounded-pill ms-3">Mentor</button>
-                    <p class="deskripsi text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi vel
-                        placeat
-                        harum delectus voluptas
-                        assumenda, illo voluptatibus, ad et reprehenderit quis maxime corporis temporibus voluptatem, at
-                        necessitatibus dicta laudantium qui molestiae dignissimos.</p>
+                    <p class="deskripsi text-justify mt-2">{{ $playlist->user->bio }}</p>
                 </div>
             </div>
             <div class="col-5 d-flex justify-content-center align-items-center ">

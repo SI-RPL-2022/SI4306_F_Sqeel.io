@@ -20,7 +20,7 @@ form.search-bar input[type=text] {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     float: left;
-    width: 575px;
+    width: 500px;
     height: 40px;
     background: #ffffff;
   }

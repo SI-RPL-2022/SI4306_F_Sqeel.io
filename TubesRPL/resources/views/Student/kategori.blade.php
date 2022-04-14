@@ -11,7 +11,7 @@
             <div class="row row-cols-3" style="width: 80%">
                 @foreach ($kategori->playlist as $playlist)
                     <div class="col">
-                        <a href="/materi/" class="kategori">
+                        <a href="/materi/{{ $playlist->id }}" class="kategori">
                             <div class="card" id="web">
                                 <img src="/images/kategori/web.png" class="card-img-top" alt="...">
                                 <div class="card-body text-center">

@@ -47,7 +47,11 @@ class PlaylistController extends Controller
      */
     public function show(playlist $playlist)
     {
-        //
+        return view('Student.indexMateri', [
+            'title' => $playlist->judul,
+            'playlist' => $playlist,
+
+        ]);
     }
 
     /**
