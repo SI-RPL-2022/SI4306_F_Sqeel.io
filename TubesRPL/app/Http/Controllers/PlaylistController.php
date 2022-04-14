@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\playlist;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreplaylistRequest;
 use App\Http\Requests\UpdateplaylistRequest;
 
@@ -47,10 +48,16 @@ class PlaylistController extends Controller
      */
     public function show(playlist $playlist)
     {
+        $enroll = DB::table('enrolls')
+                ->where('playlist_id', '=', $playlist->id)
+                ->where('user_id', '=', auth()->user()->id)
+                ->exists();;
+
+        
         return view('Student.indexMateri', [
             'title' => $playlist->judul,
             'playlist' => $playlist,
-
+            'enroll' => $enroll
         ]);
     }
 

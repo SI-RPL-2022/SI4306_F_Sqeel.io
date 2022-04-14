@@ -35,7 +35,12 @@ class EnrollController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $enroll = Enroll::create([
+            'user_id'     => $request->user_id,
+            'playlist_id'   => $request->playlist_id
+        ]);
+
+        return redirect('/materi/'.$request['playlist_id']);
     }
 
     /**

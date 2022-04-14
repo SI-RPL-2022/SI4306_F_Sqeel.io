@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -35,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/library', [KategoriController::class, 'index']);
     Route::get('/library/{kategori:namaKategori}', [KategoriController::class, 'show']);
     Route::get('/materi/{playlist}', [PlaylistController::class, 'show']);
+    Route::post('/enroll',[EnrollController::class,'store']);
 });
 
 Route::get('/signup', [RegisterController::class, 'index']);

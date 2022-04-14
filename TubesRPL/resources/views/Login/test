@@ -75,14 +75,16 @@ playlist::create([
 video::create([
     'idvideo'=> '8VZ4vPjeHec',
     'playlist_id' => 2,
-    'judulVideo'=>'Belajar Boostrap'
+    'judulVideo'=>'Belajar Boostrap',
+    'deskripsi' => 'Belajar Boostrap Bagian 1'
     
 ])
 
 video::create([
     'idvideo'=> 'Y5CUzvJOlp0',
     'playlist_id' => 2,
-    'judulVideo'=>'Belajar Boostrap 2'
+    'judulVideo'=>'Belajar Boostrap 2',
+    'deskripsi' => 'Belajar Boostrap Bagian 2'
     
 ])
 
@@ -90,7 +92,8 @@ video::create([
 playlist::create([
     'judul'=> 'Belajar Boostrap',
     'user_id' => 1,
-    'kategori_id'=>1
+    'kategori_id'=>1,
+    'deskripsi' => 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et'
 ])
 
 
