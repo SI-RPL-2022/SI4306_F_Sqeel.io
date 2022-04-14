@@ -15,11 +15,12 @@
 
     {{-- Link CSS --}}
     <link rel="stylesheet" href="/css/main.css">
+    
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: white">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg sticky-top justify-content-center" style="background-color: white;">
+        <div class="container" style=" transform: translatex(6%);" >
             <a class="navbar-brand m-3" href="/"><img src="/images/logo.png" alt="" width="85%"></a>
             <form action="" class="search-bar ms-3">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
