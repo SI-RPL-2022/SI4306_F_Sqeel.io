@@ -26,7 +26,9 @@ class PlaylistController extends Controller
      */
     public function create()
     {
-        //
+        return view('Mentor.createmateri', [
+            'title' => 'Create Playlist'
+        ]);
     }
 
     /**
@@ -49,11 +51,11 @@ class PlaylistController extends Controller
     public function show(playlist $playlist)
     {
         $enroll = DB::table('enrolls')
-                ->where('playlist_id', '=', $playlist->id)
-                ->where('user_id', '=', auth()->user()->id)
-                ->exists();;
+            ->where('playlist_id', '=', $playlist->id)
+            ->where('user_id', '=', auth()->user()->id)
+            ->exists();;
 
-        
+
         return view('Student.indexMateri', [
             'title' => $playlist->judul,
             'playlist' => $playlist,

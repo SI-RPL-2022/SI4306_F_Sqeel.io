@@ -36,7 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/library', [KategoriController::class, 'index']);
     Route::get('/library/{kategori:namaKategori}', [KategoriController::class, 'show']);
     Route::get('/materi/{playlist}', [PlaylistController::class, 'show']);
-    Route::post('/enroll',[EnrollController::class,'store']);
+    Route::post('/enroll', [EnrollController::class, 'store']);
 });
 
 Route::get('/signup', [RegisterController::class, 'index']);
@@ -47,4 +47,5 @@ Route::post('/login', [loginController::class, 'authenticate']);
 
 Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::get('/mentor/index', [UserController::class, 'indexMentor']);
+    Route::get('/create/materi', [PlaylistController::class, 'create']);
 });
