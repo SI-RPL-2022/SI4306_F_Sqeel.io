@@ -6,6 +6,7 @@ use App\Models\playlist;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreplaylistRequest;
 use App\Http\Requests\UpdateplaylistRequest;
+use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
 {
@@ -39,7 +40,37 @@ class PlaylistController extends Controller
      */
     public function store(StoreplaylistRequest $request)
     {
-        //
+        // if ($request->hasFile('thumbnail')) {
+        //     $filename = $request['judul'] . '.jpg';
+        //     $request->profile->storeAs('thumbnail', $filename, 'public');
+        // }
+        // $data =[
+        //     'judul' => $request['judul'],
+        //     'thumbnail' => $filename,
+        //     'user_id'=> $request['user_id'],
+        //     'kategori_id' => $request['kategori_id'],
+        //     'deskripsi' => $request['deskripsi']
+        // ];
+
+        // playlist::create($data);
+        // return redirect('/create/video');
+    }
+
+    public function simpan(Request $request){
+        if ($request->hasFile('thumbnail')) {
+            $filename = $request['judul']." by user ". $request['user_id'] . '.jpg';
+            $request->thumbnail->storeAs('thumbnail', $filename, 'public');
+        }
+        $data =[
+            'judul' => $request['judul'],
+            'thumbnail' => $filename,
+            'user_id'=> $request['user_id'],
+            'kategori_id' => $request['kategori_id'],
+            'deskripsi' => $request['deskripsi']
+        ];
+
+        playlist::create($data);
+        return redirect('/create/'.$request['judul'].'/video')->with('msg', 'Berhasil Membuat Playlist '.$request['judul']);;
     }
 
     /**

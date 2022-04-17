@@ -1,9 +1,14 @@
 @extends('layout.mentor')
 
 @section('content')
-    <form class="" action="">
+    <form class="" action="/create/video" method="POST">
         @csrf
         <h3 class="mb-5" style="font-weight: bold">Create New Video</h3>
+        @if (session()->has('msg'))
+            <div class="alert alert-success">
+                {{ session()->get('msg') }}
+            </div>
+        @endif
         <div class="mb-3 mt-4 row">
             <label class="mb-2 text-muted" for="">ID Video</label>
             <div class="col">
@@ -11,9 +16,10 @@
             </div>
         </div>
         <div class="mb-3 mt-4 row">
-            <label class="mb-2 text-muted" for="">ID Playlist</label>
+            <label class="mb-2 text-muted" for="">Judul Playlist</label>
             <div class="col">
-                <input type="text" class="form-control" id="playlist_id" name="playlist_id" placeholder="ID playlist" disabled>
+                <input type="text" class="form-control" value="{{ $playlist->judul }}" disabled>
+                <input type="text" class="form-control" name="judul" id="judul" value="{{ $playlist->judul }}" hidden>
             </div>
         </div>
         <div class="mb-3 mt-4 row">
@@ -32,17 +38,11 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="mt-3 mb-4 row ">
-            <Label class="mb-3 text-muted">Thumbnail</Label>
-            <div class="col">
-                <input class="form-control" type="file" name="thumbnail" id="formFile">
-            </div>
-        </div>
-        <input type="text" value="{{ auth()->user()->id }}" name="user_id" id="user_id" hidden> --}}
         <hr>
+        <input type="text" class="form-control" id="playlist_id" name="playlist_id" value="{{ $playlist->id }}" hidden>
         <div class="d-grid gap-3 d-md-block" style="margin-bottom: 5rem;">
-            <button type="button" class="btn create btn-lg">Create</button>
-            <button type="button" class="btn cancel btn-lg">Cancel</button>
+            <button type="submit" class="btn create btn-lg">Create</button>
+            <a href="/create/materi" class="btn cancel btn-lg">Back to Home</a>
         </div>
     </form>
 @endsection

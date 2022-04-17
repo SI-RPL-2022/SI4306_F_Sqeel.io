@@ -7,6 +7,8 @@ use App\Models\video;
 use App\Http\Requests\StorevideoRequest;
 use App\Http\Requests\UpdatevideoRequest;
 use App\Models\playlist;
+use Illuminate\Http\Request;
+
 
 class VideoController extends Controller
 {
@@ -25,10 +27,12 @@ class VideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(playlist $playlist)
     {
+        
         return view('Mentor.createvideo',[
-            'title'=>'Create Video'
+            'title'=>'Create Video',
+            'playlist' => $playlist
         ]);
     }
 
@@ -41,6 +45,18 @@ class VideoController extends Controller
     public function store(StorevideoRequest $request)
     {
         //
+    }
+
+    public function simpan(Request $request){
+        $data =[
+            'idvideo' => $request['idvideo'],
+            'playlist_id'=> $request['playlist_id'],
+            'judulVideo' => $request['judulVideo'],
+            'deskripsi' => $request['deskripsi']
+        ];
+
+        video::create($data);
+        return redirect('/create/'.$request['judul'].'/video')->with('msg', 'Berhasil Membuat video '.$request['judulVideo']);
     }
 
     /**
