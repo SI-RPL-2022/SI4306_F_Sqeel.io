@@ -27,7 +27,9 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Mentor.createvideo',[
+            'title'=>'Create Video'
+        ]);
     }
 
     /**
