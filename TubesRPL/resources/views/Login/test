@@ -69,7 +69,8 @@ playlist::create([
     'judul'=> 'Belajar Laravel',
     'user_id' => 1,
     'kategori_id'=>1,
-    'deskripsi' => 'Belajar Laravel Bersama'
+    'deskripsi' => 'Belajar Laravel Bersama',
+    'thumbnail' => 'Laravel.jpg'
 ])
 
 video::create([
