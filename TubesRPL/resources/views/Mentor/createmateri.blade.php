@@ -1,7 +1,7 @@
 @extends('layout.mentor')
 
 @section('content')
-    <form class="" action="">
+    <form class="" action="/create/materi" method="POST" enctype="multipart/form-data">
         @csrf
         <h3 class="mb-5" style="font-weight: bold">Create New Course</h3>
         <div class="mb-3 mt-4 row">
@@ -42,7 +42,7 @@
         <input type="text" value="{{ auth()->user()->id }}" name="user_id" id="user_id" hidden>
         <hr>
         <div class="d-grid gap-3 d-md-block" style="margin-bottom: 5rem;">
-            <button type="button" class="btn create btn-lg">Create</button>
+            <button type="submit" class="btn create btn-lg">Create</button>
             <button type="button" class="btn cancel btn-lg">Cancel</button>
         </div>
     </form>
