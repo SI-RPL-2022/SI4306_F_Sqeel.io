@@ -48,4 +48,5 @@ Route::post('/login', [loginController::class, 'authenticate']);
 Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::get('/mentor/index', [UserController::class, 'indexMentor']);
     Route::get('/create/materi', [PlaylistController::class, 'create']);
+    Route::get('/create/video', [VideoController::class, 'create']);
 });
