@@ -11,7 +11,6 @@
         <h4>Sign Up</h4>
         <p>Choose role :</p>
         <div class="content">
-
             <input type="radio" name="role_id" id="student" value="{{ $roles[0]->id }}" required>
             <input type="radio" name="role_id" id="mentor" value="{{ $roles[1]->id }}">
             <label for="student" class="box first">

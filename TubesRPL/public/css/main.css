@@ -98,19 +98,27 @@ footer{
     width: 38rem;
 }
 
-
-/* .listvid:hover{
-    background-color: #9896a5;
-}
-
-
 .vid{
-    color: #000000;
-    text-decoration: none;
-    padding: 10px;
+    color: black;
 }
 
-.vid:hover{
-    color: #000000;
+.listvid{
+    padding: 4px;
+    margin-bottom: 5px;
+}
 
-} */
+.list{
+    padding-left: 2.5rem;
+}
+.list:hover{
+    background-color: #9c9aaa1a;
+}
+
+.dfy{
+    font-size: 12.9px;
+    color: #9C9AAA;
+}
+
+#now{
+    background-color: #c1bdd83c;
+}
