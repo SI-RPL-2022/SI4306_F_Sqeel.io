@@ -52,7 +52,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a class="dropdown-item" href="#">User Dashboard</a></li>
-                                <li><a class="dropdown-item" href="/student/profile/{{ auth()->user()->id }}">Edit
+                                <li><a class="dropdown-item" href="/profile/{{ auth()->user()->id }}">Edit
                                         Profile</a></li>
                                 <li>
                                     <hr class="dropdown-divider">

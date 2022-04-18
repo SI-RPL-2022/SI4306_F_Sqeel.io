@@ -13,7 +13,7 @@
                     <div class="col">
                         <a href="/materi/{{ $playlist->id }}" class="kategori">
                             <div class="card" id="web">
-                                <img src="/images/kategori/web.png" class="card-img-top" alt="...">
+                                <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">{{ $playlist->judul }}</h5>
                                     <p class="card-text">by: {{ $playlist->user->nama }}</p>

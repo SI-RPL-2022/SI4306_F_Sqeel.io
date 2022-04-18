@@ -25,8 +25,8 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/video/{video:idVideo}', [VideoController::class, 'show']);
     Route::get('/student/index', [UserController::class, 'index']);
-    Route::get('/student/profile/{user}', [UserController::class, 'edit']);
-    Route::post('/student/profile/{id}', [UserController::class, 'update']);
+    Route::get('/profile/{user}', [UserController::class, 'edit']);
+    Route::post('/profile/{id}', [UserController::class, 'update']);
     Route::get('/wrong', function () {
         return view('wrong', [
             'title' => 'Wrong Account'
@@ -52,4 +52,3 @@ Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::post('/create/video', [VideoController::class, 'simpan']);
     Route::get('/create/{playlist:judul}/video', [VideoController::class, 'create']);
 });
-

@@ -20,22 +20,22 @@
             </div>
             <div class="col-5 d-flex justify-content-center align-items-center ">
                 <div class="card shadow" style="width: 19rem;">
-                    <img src="/images/card/card.png" class="card-img-top p-2" alt="...">
+                    <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-2" alt="...">
                     <div class="card-body">
-                        
+
                         @if ($enroll == false)
-                        <form class="d-grid gap-2" action="/enroll" method="POST">
-                            @csrf
-                            <input type="text" name="user_id" value="{{ auth()->user()->id }}" hidden>
-                            <input type="text" name="playlist_id" value="{{ $playlist->id }}" hidden>
-                            <button type="submit" class="btn btn enroll">Enroll Course</button>
-                        </form>
+                            <form class="d-grid gap-2" action="/enroll" method="POST">
+                                @csrf
+                                <input type="text" name="user_id" value="{{ auth()->user()->id }}" hidden>
+                                <input type="text" name="playlist_id" value="{{ $playlist->id }}" hidden>
+                                <button type="submit" class="btn btn enroll">Enroll Course</button>
+                            </form>
                         @else
-                        <div class="d-grid gap-2">
-                            <a href="/video/{{ $playlist->video[0]->idvideo }}"  class="btn btn enroll">View Course</a>
-                        </div>  
+                            <div class="d-grid gap-2">
+                                <a href="/video/{{ $playlist->video[0]->idvideo }}" class="btn btn enroll">View Course</a>
+                            </div>
                         @endif
-                        
+
                     </div>
                 </div>
             </div>

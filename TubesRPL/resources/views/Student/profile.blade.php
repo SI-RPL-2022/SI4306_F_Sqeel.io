@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <form class="container" action="/student/profile/{{ $user->id }}" method="POST" enctype="multipart/form-data"
+    <form class="container" action="/profile/{{ $user->id }}" method="POST" enctype="multipart/form-data"
         style="width: 60%;">
         @csrf
         <h1 class="mb-3">Edit Profile</h1>
