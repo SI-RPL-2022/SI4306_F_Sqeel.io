@@ -12,8 +12,9 @@
                 @foreach ($kategori->playlist as $playlist)
                     <div class="col">
                         <a href="/materi/{{ $playlist->id }}" class="kategori">
-                            <div class="card" id="web">
-                                <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top" alt="...">
+                            <div class="card border" id="web">
+                                <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-3" alt="..."
+                                    style="width: 15.5rem; height: 15rem">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">{{ $playlist->judul }}</h5>
                                     <p class="card-text">by: {{ $playlist->user->nama }}</p>
