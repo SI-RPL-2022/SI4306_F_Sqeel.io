@@ -6,6 +6,7 @@ use App\Models\playlist;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreplaylistRequest;
 use App\Http\Requests\UpdateplaylistRequest;
+use App\Models\review;
 use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
@@ -56,21 +57,22 @@ class PlaylistController extends Controller
         // return redirect('/create/video');
     }
 
-    public function simpan(Request $request){
+    public function simpan(Request $request)
+    {
         if ($request->hasFile('thumbnail')) {
-            $filename = $request['judul']." by user ". $request['user_id'] . '.jpg';
+            $filename = $request['judul'] . " by user " . $request['user_id'] . '.jpg';
             $request->thumbnail->storeAs('thumbnail', $filename, 'public');
         }
-        $data =[
+        $data = [
             'judul' => $request['judul'],
             'thumbnail' => $filename,
-            'user_id'=> $request['user_id'],
+            'user_id' => $request['user_id'],
             'kategori_id' => $request['kategori_id'],
             'deskripsi' => $request['deskripsi']
         ];
 
         playlist::create($data);
-        return redirect('/create/'.$request['judul'].'/video')->with('msg', 'Berhasil Membuat Playlist '.$request['judul']);;
+        return redirect('/create/' . $request['judul'] . '/video')->with('msg', 'Berhasil Membuat Playlist ' . $request['judul']);;
     }
 
     /**
@@ -84,13 +86,14 @@ class PlaylistController extends Controller
         $enroll = DB::table('enrolls')
             ->where('playlist_id', '=', $playlist->id)
             ->where('user_id', '=', auth()->user()->id)
-            ->exists();;
+            ->exists();
 
-
+        dd($playlist->review);
         return view('Student.indexMateri', [
             'title' => $playlist->judul,
             'playlist' => $playlist,
-            'enroll' => $enroll
+            'enroll' => $enroll,
+            'review' => $playlist->review
         ]);
     }
 

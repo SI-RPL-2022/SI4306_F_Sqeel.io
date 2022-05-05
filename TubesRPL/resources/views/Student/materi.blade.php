@@ -22,11 +22,9 @@
 
                     <div class="row border-top mt-3 pt-3">
                         <p><b>Video Description</b></p>
-                        <span class="" style="color: #9C9AAA">Watch premium course free of cost and enhance
-                            your
-                            skills. The content provided here is only for
-                            Education purpose and subject to copyrights of the owner. We respect the Intellectual Property
-                            Rights of the content owner.</span>
+                        <span class="" style="color: #9C9AAA">
+                            {{ $video->deskripsi }}
+                        </span>
                     </div>
 
 

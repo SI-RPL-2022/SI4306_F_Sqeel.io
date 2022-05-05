@@ -24,4 +24,9 @@ class playlist extends Model
     {
         return $this->hasMany(video::class);
     }
+
+    public function review()
+    {
+        return $this->hasMany(review::class);
+    }
 }

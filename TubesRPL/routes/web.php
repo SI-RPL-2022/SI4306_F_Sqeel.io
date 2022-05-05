@@ -5,6 +5,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PlaylistController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Routing\RouteGroup;
@@ -37,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/library/{kategori:namaKategori}', [KategoriController::class, 'show']);
     Route::get('/materi/{playlist}', [PlaylistController::class, 'show']);
     Route::post('/enroll', [EnrollController::class, 'store']);
+    Route::post('/review', [ReviewController::class, 'store']);
 });
 
 Route::get('/signup', [RegisterController::class, 'index']);

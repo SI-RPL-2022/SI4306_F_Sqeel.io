@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Enroll extends Model
+class review extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
@@ -15,6 +15,6 @@ class Enroll extends Model
     }
     public function playlist()
     {
-        return $this->hasMany(playlist::class);
+        return $this->belongsTo(playlist::class, 'playlist_id');
     }
 }

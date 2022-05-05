@@ -40,6 +40,77 @@
                 </div>
             </div>
         </div>
-        <hr style="color: #dedde6">
+        <hr class="mt-5" style="color: #b5b4be">
+        <div class="row mt-5">
+            <div class="col-7">
+                <h4 style="padding-bottom: 3px"><b>Course Reviews ()</b></h4>
+
+                <div class="border rounded-3 " style="padding:2rem 0px; padding-right:0.7rem;padding-left:1rem">
+                    <div class="reviews mb-5">
+                        <span><img class="mentor" src="/storage/profile/{{ $playlist->user->profile }}"
+                                style="margin-right:0.8rem;"><b>{{ $playlist->user->nama }}</b>
+
+                        </span>
+                        <span class="fw-bold text-secondary" style="font-size: 11px">28 April 2022</span>
+                        <p class="deskripsi text-justify mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Porro,
+                            eum?</p>
+                    </div>
+                    <div class="reviews">
+                        <span><img class="mentor" src="/storage/profile/{{ $playlist->user->profile }}"
+                                style="margin-right:0.8rem;"><b>{{ $playlist->user->nama }}</b>
+
+                        </span>
+                        <span class="fw-bold text-secondary" style="font-size: 11px">28 April 2022</span>
+                        <p class="deskripsi text-justify mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Porro,
+                            eum?</p>
+                    </div>
+
+                    <nav class="flex-end mt-5" aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item disabled ms-1 me-1">
+                                <span class="page-link">&lt;</span>
+                            </li>
+                            <li class="page-item ms-1 me-1"><a class="page-link text-secondary" href="#">1</a></li>
+                            <li class="page-item ms-1 me-1" aria-current="page">
+                                <span class="page-link text-secondary">2</span>
+                            </li>
+                            <li class="page-item ms-1 me-1"><a class="page-link text-secondary" href="#">3</a></li>
+                            <li class="page-item ms-1 me-1">
+                                <a class="page-link text-secondary" href="#">&gt;</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+            </div>
+            <div class="col-5 d-flex justify-content-center align-items-center ">
+                <div class="card border mt-4" style="width: 19rem;">
+                    <h6 class="p-2"><b>Write Review</b></h6>
+
+
+                    @if ($enroll == false)
+                        <div class="card-body text-center">
+                            <img src="/images/Student.png" class="p-2" alt="...">
+                            <p class="text-secondary">You are not enrolled in this course</p>
+                        @else
+                            <div class="card-body">
+
+                                <form class="d-grid gap-2" action="/review" method="POST">
+                                    @csrf
+                                    <input type="text" name="user_id" value="{{ auth()->user()->id }}" hidden>
+                                    <input type="text" name="playlist_id" value="{{ $playlist->id }}" hidden>
+                                    <textarea class="form-control" name="body" id="" cols="50" rows="8"
+                                        placeholder="Write Your Review Here..."></textarea>
+                                    <button type="submit" class="btn btn enroll">Post Review</button>
+                                </form>
+                    @endif
+
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 @endsection
