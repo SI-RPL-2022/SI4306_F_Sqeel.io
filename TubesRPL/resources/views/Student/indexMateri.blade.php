@@ -46,45 +46,22 @@
                 <h4 style="padding-bottom: 3px"><b>Course Reviews ()</b></h4>
 
                 <div class="border rounded-3 " style="padding:2rem 0px; padding-right:0.7rem;padding-left:1rem">
-                    <div class="reviews mb-5">
-                        <span><img class="mentor" src="/storage/profile/{{ $playlist->user->profile }}"
-                                style="margin-right:0.8rem;"><b>{{ $playlist->user->nama }}</b>
+                    @foreach ($review as $item)
+                        {{-- @dd($item->user) --}}
+                        <div class="reviews mb-5">
+                            <span><img class="mentor" src="/storage/profile/{{ $item->profile }}"
+                                    style="margin-right:0.8rem;"><b>{{ $item->nama }}</b>
 
-                        </span>
-                        <span class="fw-bold text-secondary" style="font-size: 11px">28 April 2022</span>
-                        <p class="deskripsi text-justify mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Porro,
-                            eum?</p>
+                            </span>
+                            <span class="fw-bold text-secondary"
+                                style="font-size: 11px; margin-left:0.5rem;">{{ $item->created_at }}</span>
+                            <p class="deskripsi text-justify mt-2">{{ $item->body }}</p>
+                        </div>
+                    @endforeach
+                    <div class="">
+                        {{ $review->links() }}
                     </div>
-                    <div class="reviews">
-                        <span><img class="mentor" src="/storage/profile/{{ $playlist->user->profile }}"
-                                style="margin-right:0.8rem;"><b>{{ $playlist->user->nama }}</b>
-
-                        </span>
-                        <span class="fw-bold text-secondary" style="font-size: 11px">28 April 2022</span>
-                        <p class="deskripsi text-justify mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Porro,
-                            eum?</p>
-                    </div>
-
-                    <nav class="flex-end mt-5" aria-label="...">
-                        <ul class="pagination">
-                            <li class="page-item disabled ms-1 me-1">
-                                <span class="page-link">&lt;</span>
-                            </li>
-                            <li class="page-item ms-1 me-1"><a class="page-link text-secondary" href="#">1</a></li>
-                            <li class="page-item ms-1 me-1" aria-current="page">
-                                <span class="page-link text-secondary">2</span>
-                            </li>
-                            <li class="page-item ms-1 me-1"><a class="page-link text-secondary" href="#">3</a></li>
-                            <li class="page-item ms-1 me-1">
-                                <a class="page-link text-secondary" href="#">&gt;</a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
-
-
             </div>
             <div class="col-5 d-flex justify-content-center align-items-center ">
                 <div class="card border mt-4" style="width: 19rem;">

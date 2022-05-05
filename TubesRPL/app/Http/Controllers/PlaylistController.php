@@ -88,12 +88,16 @@ class PlaylistController extends Controller
             ->where('user_id', '=', auth()->user()->id)
             ->exists();
 
-        dd($playlist->review);
+        $review = DB::table('reviews')
+            ->where('playlist_id', $playlist->id)
+            ->join('users', 'users.id', '=', 'user_id')
+            ->paginate(2);
+
         return view('Student.indexMateri', [
             'title' => $playlist->judul,
             'playlist' => $playlist,
             'enroll' => $enroll,
-            'review' => $playlist->review
+            'review' => $review
         ]);
     }
 
