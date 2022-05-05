@@ -43,8 +43,13 @@
 
                     @auth
                         <li class="nav-item">
-                            <img src=" /storage/profile/{{ auth()->user()->profile }}" width="30px" height="30px"
-                                class="profile ms-3 mt-1 me-1" alt="">
+                            @if (empty(auth()->user()->profile))
+                                <img src=" /images/profil/profile.jpg" width="30px" height="30px"
+                                    class="profile ms-3 mt-1 me-1" alt="">
+                            @else
+                                <img src=" /storage/profile/{{ auth()->user()->profile }}" width="30px" height="30px"
+                                    class="profile ms-3 mt-1 me-1" alt="">
+                            @endif
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
