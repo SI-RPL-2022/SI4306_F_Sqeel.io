@@ -19,33 +19,27 @@
     <div id="loading">
         <div class="load-circle"><span class="one"></span></div>
     </div>
+
     <div class="site-wrapper overflow-hidden ">
 
-        <div class="omga-07__hero-area bg-black-squeeze">
+        <div class="omga-07__hero-area bg-black-squeeze" id="halaman1">
             <div class="container">
                 <div class="row align-items-center">
+
+                    <div class="col-lg-7 col-xl-6 col-md-7 offset-xl-1" data-aos="fade-right" data-aos-duration="500"
+                        data-aos-once="true">
+                        <div class="omga-07__hero-content ">
+                            <h1 class="title">Learn new skills<br class="d-none d-lg-block">anytime, anywhere
+                            </h1>
+                            <p>Expand your career opportunity, start learning new skills for free today. With over 100+
+                                professional mentors.</p>
+                            <a type="submit" class="btn--primary hvr-bounce-to-left">Get Started</a>
+                        </div>
+                    </div>
                     <div class="col-lg-5 col-xl-4 col-md-5 col-sm-6 mb--30 mb-md--0" data-aos="fade-right"
                         data-aos-duration="500" data-aos-delay="1600" data-aos-once="true">
                         <div class="omga-07__hero-image">
                             <img src="./image/png/l7-hero-image.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-xl-6 col-md-7 offset-xl-1" data-aos="fade-right" data-aos-duration="500"
-                        data-aos-once="true">
-                        <div class="omga-07__hero-content ">
-                            <h1 class="title">Travel the world & <br class="d-none d-lg-block"> meet new friends.
-                            </h1>
-                            <p>Create custom landing pages with Omega that convert more visitors than any website. With lots
-                                of unique blocks, you can easily build a page without coding.</p>
-                            <form action="./" class="mt--35">
-                                <div class="omga-07__hero-form">
-                                    <div class="input-group">
-                                        <input type="text" placeholder="Email address">
-                                        <i class="icon icon-email-84"></i>
-                                    </div>
-                                    <button type="submit" class="btn--primary hvr-bounce-to-left">I want to join</button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -56,31 +50,57 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mb--30">
-                        <div class="omga-07__single-review">
-                            <div class="review-star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
+                        <div class="card mb-3" style="max-width: 389px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/images/icon.png" class="ps-3 pt-5" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="font-weight: bold">Personalized Learning</h5>
+                                        <p class="card-text">Students practice at their own pace, first filling in gaps
+                                            in their understanding and then accelerating their learning.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <p>“OMG! I cannot believe that I have got a brand new landing page after getting Omega. It was
-                                super easy to edit and publish. Everyone should try it!”</p>
-                            <span class="user-name">Jonathan Taylor</span>
+                        </div>
+                        <div class="card mb-3" style="max-width: 389px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/images/icon-1.png" class="ps-3 pt-4" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="font-weight: bold">Trusted Content</h5>
+                                        <p class="card-text">Created by experts, our library of trusted practice and
+                                            lessons.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-3" style="max-width: 389px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/images/icon-2.png" class="ps-3 pt-4" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="font-weight: bold">Empowering Mentors</h5>
+                                        <p class="card-text">Teachers can identify gaps in their students, and meet the
+                                            needs of every student.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb--30">
-                        <div class="omga-07__single-review">
-                            <div class="review-star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <p>“You made it so simple. My new site is so much faster and easier to work with than my old
-                                site. I just choose the page, make the change and click save.”</p>
-                            <span class="user-name">Lizzie Rodgers</span>
+                    <div class="col-md-6 " style="margin-top: 12%">
+                        <div class="omga-07__hero-content ">
+                            <h4 style="color: white" class="title">Why learn at Sqeel.io?
+                            </h4>
+                            <p style="color: white">Learn from expert professionals and join the largest online community
+                                for people who are looking to improve.</p>
+
                         </div>
                     </div>
                 </div>
@@ -93,27 +113,15 @@
                     <div class="col-lg-6 mb--30 mb--md-0 order-lg-2">
                         <div class="omga-07__content-image" data-aos="fade-right" data-aos-duration="500"
                             data-aos-delay="200" data-aos-once="true">
-                            <img src="./image/png/l7-mobile.png" alt="">
+                            <img src="/images/bg2.jpg" alt="...">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-9 order-lg-1">
                         <div class="omga-07__content-text">
-                            <h2 class="title">Fits everything on <br
-                                    class="d-none d-sm-block d-md-none d-xl-block"> all your devices.</h2>
-                            <p>Create custom landing pages with Omega that converts more visitors than any website. With
-                                lots of unique blocks, you can easily build a page without coding.</p>
-                            <div class="content-widget">
-                                <div class="single-widget">
-                                    <h3 class="w-title">Find your trip partner</h3>
-                                    <p>With lots of unique blocks, you can easily build a page without coding. Build your
-                                        next landing page quickly.</p>
-                                </div>
-                                <div class="single-widget">
-                                    <h3 class="w-title">Plan trip with easy steps</h3>
-                                    <p>With lots of unique blocks, you can easily build a page without coding. Build your
-                                        next landing page quickly.</p>
-                                </div>
-                            </div>
+                            <h1 class="title">Become a mentor<br class="d-none d-lg-block">at Sqeel.io
+                            </h1>
+                            <p>Create custom landing pages with Omega that converts more visitors than any website. With lots of unique blocks, you can easily build a page without coding.</p>
+                            <a type="submit" class="btn--primary hvr-bounce-to-left">Apply as mentor</a>
                         </div>
                     </div>
                 </div>
@@ -122,8 +130,16 @@
         <!-- Content Area 2 -->
         <div class="omga-07__content-section-2">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb--30 mb--md-0">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="omga-07__content-text">
+                            <h2 class="title">Popular Courses<h2>
+                                    <p>Create custom landing pages with Omega that converts more visitors than any website.
+                                        With
+                                        lots of unique blocks, you can easily build a page without coding.</p>
+                        </div>
+                    </div>
+                    {{-- <div class="col-lg-6 mb--30 mb--md-0">
                         <div class="omga-07__content-image-2 omga-07__content-image-group">
                             <div class="single-image">
                                 <img src="./image/jpeg/l7-content2-image-1.jpg" alt="" data-aos="zoom-in"
@@ -138,15 +154,8 @@
                                     data-aos-duration="500" data-aos-delay="1500" data-aos-once="true">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-9 ">
-                        <div class="omga-07__content-text">
-                            <h2 class="title">See the world & <br
-                                    class="d-none d-sm-block d-md-none d-xl-block">spend less always.</h2>
-                            <p>Create custom landing pages with Omega that converts more visitors than any website. With
-                                lots of unique blocks, you can easily build a page without coding.</p>
-                        </div>
-                    </div>
+                    </div> --}}
+
                 </div>
             </div>
         </div>
@@ -155,19 +164,22 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb--30 mb--md-0 order-lg-2">
-                        <div class="comga-07__ontent-image-3" data-aos="fade-right" data-aos-duration="500"
+                        <div class="omga-07__content-image-2 parent" data-aos="fade-right" data-aos-duration="500"
                             data-aos-delay="200" data-aos-once="true">
-                            <img src="./image/png/l7-mobile-2.png" alt="">
+                            <img src="./images/bg3.jpg" class="image1" alt="">
+                            <div class="col-md-4">
+                                <img src="/images/Oval Copy.png" class="ps-3 pb-5 image2" alt="...">
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-9 order-lg-1">
                         <div class="omga-07__content-text">
-                            <h2 class="title">Improving your <br
-                                    class="d-none d-sm-block d-md-none d-xl-block">travel experience.</h2>
+                            <h2 class="title">Save tons of time <br
+                                    class="d-none d-sm-block d-md-none d-xl-block">on design and coding.</h2>
                             <p>Create custom landing pages with Omega that converts more visitors than any website. With
                                 lots of unique blocks, you can easily build a page without coding.</p>
                             <div class="omga-07__content-btn pt--30">
-                                <a href="#cta" class="btn--primary goto   ">Get this app</a>
+                                <a href="#cta" class="btn--primary goto">Get started</a>
                             </div>
                         </div>
                     </div>
@@ -175,28 +187,35 @@
             </div>
         </div>
         <!-- Video Area -->
-        <div class="omga__video-area-1 video-img-overlay">
+        {{-- <div class="omga__video-area-1 video-img-overlay">
             <img src="./image/jpeg/video-bg.jpg" alt="" class="video-image">
             <a href="https://youtu.be/jssO8-5qmag" class="play-button" data-fancybox><img
                     src="./image/png/video-play-img.png" alt=""></a>
-        </div>
+        </div> --}}
         <!-- Cta Area -->
-        <div class="omga-07__cta-section" id="cta">
+        <div class="omga-07__review-area bg-indigo">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="omga-07__cta-content ">
-                            <h2>Get the app now</h2>
-                            <p>Create custom landing pages with Omega that converts <br class="d-none d-md-block"> more
-                                visitors than any website.</p>
-                            <div class="cta-btns">
-                                <a href="#" class="apple-store">
-                                    <img src="image/png/app-store.png" alt="">
-                                </a>
-                                <a href="" class="google-play">
-                                    <img src="image/png/google-play.png" alt="">
-                                </a>
+                <div class="row">
+                    <div class="col-md-6 mb--30">
+                        <div class="col-lg-6 mb--30 mb--md-0 order-lg-2">
+                            <div class="omga-07__content-image-2 parent" data-aos="fade-right" data-aos-duration="500"
+                                data-aos-delay="200" data-aos-once="true">
+                                <img src="./images/bg4.png" class="image3" alt="">
+                                <div class="col-md-4">
+                                    <img src="/images/Oval Copy2.png" class="ps-3 pb-5 image4" alt="...">
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 " style="margin-top: 12%">
+                        <div class="omga-07__hero-content ">
+                            <h4 style="color: white" class="title">Get started now
+                            </h4>
+                            <p style="color: white">Create custom landing pages with Omega that converts more visitors than any website. With lots of unique blocks, you can easily build a page without coding.</p>
+                            <div class="omga-07__content-btn pt--30">
+                                <a href="#cta" class="btn--primary goto">Get started</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>

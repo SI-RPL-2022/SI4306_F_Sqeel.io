@@ -21957,13 +21957,14 @@ p {
 }
 
 .btn--primary, .btn--red, .btn--secondary, .btn--outline, .btn--yellow {
+  text-decoration: none;
   padding-left: 25px;
   padding-right: 25px;
   min-width: 200px;
   height: 60px;
   border-radius: 5px;
-  border: 1px solid #f04037;
-  background: #f04037;
+  border: 1px solid #A574ED;
+  background: #A574ED;
   color: #fff;
   font-size: 21px;
   font-weight: 500;
@@ -27448,6 +27449,7 @@ p {
 
 .omga-07__hero-image img {
   max-width: 80%;
+  visibility: hidden;
 }
 
 @media (min-width: 400px) {
@@ -29568,8 +29570,7 @@ p {
 }
 
 .omga-07__content-image img {
-  -webkit-transform: rotate(3deg);
-          transform: rotate(3deg);
+  
   border-radius: 10px;
   max-width: 70%;
 }
@@ -31927,7 +31928,7 @@ p {
 
 /*>>>>>>>> Review area styling 7 (landing-7)<<<<<<<<<*/
 .omga-07__review-area {
-  background-color: #5454d4;
+  background-color: #413E65;
   padding-top: 50px;
   padding-bottom: 20px;
 }
@@ -32849,3 +32850,36 @@ p {
 }
 
 /*# sourceMappingURL=maps/main.css.map */
+
+
+#halaman1 {
+  background-image: url("/images/bg.png");
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image2 {
+  position: absolute;
+  bottom: 30px;
+  left: -60px;
+}
+
+.image3 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image4 {
+  position: absolute;
+  bottom: 30px;
+  left: 100px;
+}
