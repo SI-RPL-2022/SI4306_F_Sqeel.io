@@ -33,9 +33,9 @@
                     <div class="div">
                         <h5 class=" mb-2 mt-3">The Complete of {{ $playlist->judul }} Course</h5>
                         <div class="progress mb-4">
-                            <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                aria-valuemax="100" style="background-color: #A574ED"></div>
-
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ $progress }}"
+                                aria-valuemin="0" aria-valuemax="100"
+                                style="background-color: #A574ED; width:{{ $progress }}%">{{ $progress }}%</div>
                         </div>
                         <hr>
 
@@ -47,12 +47,12 @@
                         @foreach ($playlist->video as $list)
                             <li class="listvid " style="list-style: none;">
                                 <div class="list form-check" id="{{ $video->id == $list->id ? 'now' : 'not' }}">
-                                    <input class="form-check-input mt-3" type="checkbox" value="" id="checkbox">
-                                    <label class="form-check-label" for="checkbox">
-                                        <a class="vid" href="/video/{{ $list->idvideo }}"
-                                            style="text-decoration: none"> {{ $list->judulVideo }}
-                                        </a>
-                                    </label> <br>
+                                    <input class="form-check-input mt-3" type="checkbox" value="" id="checkbox"
+                                        {{ $transaksi->contains('video_id', $list->id) ? 'checked' : '' }} disabled>
+                                    <a class="vid" href="/video/{{ $list->idvideo }}"
+                                        style="text-decoration: none"> {{ $list->judulVideo }}
+                                    </a>
+                                    <br>
                                     <span class="dfy">Uploaded
                                         at {{ $list->created_at->format('d F Y') }}</span>
                                 </div>

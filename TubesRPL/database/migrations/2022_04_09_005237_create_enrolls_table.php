@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId("user_id");
             $table->foreignId("playlist_id");
+            $table->integer("progress")->default(0);
         });
     }
 

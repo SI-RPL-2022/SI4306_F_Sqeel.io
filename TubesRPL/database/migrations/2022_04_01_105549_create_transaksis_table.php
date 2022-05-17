@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId("video_id");
             $table->foreignId("user_id");
-            $table->date("tanggal");
+            $table->foreignId("playlist_id");
+            $table->timestamps();
         });
     }
 

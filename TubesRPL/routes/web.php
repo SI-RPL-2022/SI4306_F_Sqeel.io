@@ -34,18 +34,19 @@ Route::middleware(['auth'])->group(function () {
         ]);
     });
     Route::get('/logout', [loginController::class, 'logout']);
-    Route::get('/library', [KategoriController::class, 'index']);
-    Route::get('/library/{kategori:namaKategori}', [KategoriController::class, 'show']);
+
     Route::get('/materi/{playlist}', [PlaylistController::class, 'show']);
     Route::post('/enroll', [EnrollController::class, 'store']);
     Route::post('/review', [ReviewController::class, 'store']);
 });
 
+Route::get('/library', [KategoriController::class, 'index']);
+Route::get('/library/{kategori:namaKategori}', [KategoriController::class, 'show']);
 Route::get('/signup', [RegisterController::class, 'index']);
 Route::post('/signup', [RegisterController::class, 'store']);
 Route::post('/signup/form', [RegisterController::class, 'signupview']);
-
 Route::post('/login', [loginController::class, 'authenticate']);
+Route::get('/search', [PlaylistController::class, 'search']);
 
 Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::get('/mentor/index', [UserController::class, 'indexMentor']);

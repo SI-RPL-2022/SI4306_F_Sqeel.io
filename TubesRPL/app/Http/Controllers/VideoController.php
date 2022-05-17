@@ -8,7 +8,8 @@ use App\Http\Requests\StorevideoRequest;
 use App\Http\Requests\UpdatevideoRequest;
 use App\Models\playlist;
 use Illuminate\Http\Request;
-
+use App\Models\transaksi;
+use App\Models\Enroll;
 
 class VideoController extends Controller
 {
@@ -29,9 +30,9 @@ class VideoController extends Controller
      */
     public function create(playlist $playlist)
     {
-        
-        return view('Mentor.createvideo',[
-            'title'=>'Create Video',
+
+        return view('Mentor.createvideo', [
+            'title' => 'Create Video',
             'playlist' => $playlist
         ]);
     }
@@ -47,16 +48,17 @@ class VideoController extends Controller
         //
     }
 
-    public function simpan(Request $request){
-        $data =[
+    public function simpan(Request $request)
+    {
+        $data = [
             'idvideo' => $request['idvideo'],
-            'playlist_id'=> $request['playlist_id'],
+            'playlist_id' => $request['playlist_id'],
             'judulVideo' => $request['judulVideo'],
             'deskripsi' => $request['deskripsi']
         ];
 
         video::create($data);
-        return redirect('/create/'.$request['judul'].'/video')->with('msg', 'Berhasil Membuat video '.$request['judulVideo']);
+        return redirect('/create/' . $request['judul'] . '/video')->with('msg', 'Berhasil Membuat video ' . $request['judulVideo']);
     }
 
     /**
@@ -67,13 +69,43 @@ class VideoController extends Controller
      */
     public function show(video $video)
     {
+        // menambahkan data transaksi video
 
+        $data = [
+            'video_id' => $video->id,
+            'user_id' => auth()->user()->id,
+            'playlist_id' => $video->playlist->id
 
-        // dd($video->created_at->format('l, d F Y'));
+        ];
+        $ada = false;
+        $transaction = transaksi::all();
+        foreach ($transaction as $tran) {
+            if ($tran->video_id == $data['video_id'] && $tran->user_id == $data['user_id']) {
+                $ada = true;
+            }
+        }
+        if (!$ada) {
+            transaksi::create($data);
+        }
+        // dd($video->playlist->transaksi);
+        //Menghitung progress
+        $a = transaksi::where('playlist_id', $video->playlist->id)
+            ->where('user_id', auth()->user()->id)
+            ->get();
+        $progress = ((count($a) / count($video->playlist->video)) * 100);
+        $progress = round($progress);
+        Enroll::where('playlist_id', $video->playlist->id)
+            ->where('user_id',  auth()->user()->id)
+            ->update(['progress' => $progress]);
+
+        // dd(round($progress));
+        // membuka halaman video
         return view('Student.materi', [
             'title' => $video->judulVideo,
             'video' => $video,
-            'playlist' => $video->playlist
+            'playlist' => $video->playlist,
+            'transaksi' => $a,
+            'progress' => $progress
         ]);
     }
 

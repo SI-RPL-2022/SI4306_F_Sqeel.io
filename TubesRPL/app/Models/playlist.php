@@ -29,4 +29,8 @@ class playlist extends Model
     {
         return $this->hasMany(review::class);
     }
+    public function transaksi()
+    {
+        return $this->hasMany(transaksi::class);
+    }
 }

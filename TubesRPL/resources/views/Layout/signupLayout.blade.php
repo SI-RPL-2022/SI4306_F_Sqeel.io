@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <center><a href="/landing"><img class="mt-5" src="/images/logo.png" alt="" style="width: 150px"></a>
+    <center><a href="/"><img class="mt-5" src="/images/logo.png" alt="" style="width: 150px"></a>
     </center>
     <div class="container shadow mt-2">
         @yield('login')

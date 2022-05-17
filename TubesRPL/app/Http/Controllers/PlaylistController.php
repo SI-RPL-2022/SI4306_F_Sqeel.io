@@ -134,4 +134,15 @@ class PlaylistController extends Controller
     {
         //
     }
+
+    public function search(Request $request)
+    {
+        $playlists = playlist::latest();
+        $playlists->where('judul', 'like', '%' . $request->key . '%');
+        return view('Student.search', [
+            'title' => 'Search Materi',
+            'playlists' => $playlists->get(),
+            'key' => $request->key
+        ]);
+    }
 }
