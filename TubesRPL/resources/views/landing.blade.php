@@ -120,7 +120,8 @@
                         <div class="omga-07__content-text">
                             <h1 class="title">Become a mentor<br class="d-none d-lg-block">at Sqeel.io
                             </h1>
-                            <p>Create custom landing pages with Omega that converts more visitors than any website. With lots of unique blocks, you can easily build a page without coding.</p>
+                            <p>Create custom landing pages with Omega that converts more visitors than any website. With
+                                lots of unique blocks, you can easily build a page without coding.</p>
                             <a type="submit" class="btn--primary hvr-bounce-to-left">Apply as mentor</a>
                         </div>
                     </div>
@@ -130,32 +131,30 @@
         <!-- Content Area 2 -->
         <div class="omga-07__content-section-2">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-4">
+                <div class="row">
+                    <div class="col">
                         <div class="omga-07__content-text">
-                            <h2 class="title">Popular Courses<h2>
-                                    <p>Create custom landing pages with Omega that converts more visitors than any website.
-                                        With
-                                        lots of unique blocks, you can easily build a page without coding.</p>
+                            <h2 class="title text-center">Recent Courses<h2>
+                                    <div class="row row-cols-3">
+                                        @foreach ($latest as $playlist)
+                                            <div class="col">
+                                                <a href="/materi/{{ $playlist->id }}" class="kategori">
+                                                    <div class="card border" id="web">
+                                                        <img src="/storage/thumbnail/{{ $playlist->thumbnail }}"
+                                                            class="card-img-top p-3" alt="..."
+                                                            style="width: 15.5rem; height: 15rem">
+                                                        <div class="card-body text-center">
+                                                            <h5 class="card-title">{{ $playlist->judul }}</h5>
+                                                            <p class="card-text">by: {{ $playlist->user->nama }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    </div>
                         </div>
                     </div>
-                    {{-- <div class="col-lg-6 mb--30 mb--md-0">
-                        <div class="omga-07__content-image-2 omga-07__content-image-group">
-                            <div class="single-image">
-                                <img src="./image/jpeg/l7-content2-image-1.jpg" alt="" data-aos="zoom-in"
-                                    data-aos-duration="500" data-aos-once="true">
-                                <img src="./image/jpeg/l7-content2-image-2.jpg" alt="" data-aos="zoom-in"
-                                    data-aos-duration="500" data-aos-delay="600" data-aos-once="true">
-                            </div>
-                            <div class="single-image">
-                                <img src="./image/jpeg/l7-content2-image-3.jpg" alt="" data-aos="zoom-in"
-                                    data-aos-duration="500" data-aos-delay="1000" data-aos-once="true">
-                                <img src="./image/jpeg/l7-content2-image-4.jpg" alt="" data-aos="zoom-in"
-                                    data-aos-duration="500" data-aos-delay="1500" data-aos-once="true">
-                            </div>
-                        </div>
-                    </div> --}}
-
                 </div>
             </div>
         </div>
@@ -175,12 +174,9 @@
                     <div class="col-lg-6 col-md-9 order-lg-1">
                         <div class="omga-07__content-text">
                             <h2 class="title">Save tons of time <br
-                                    class="d-none d-sm-block d-md-none d-xl-block">on design and coding.</h2>
-                            <p>Create custom landing pages with Omega that converts more visitors than any website. With
-                                lots of unique blocks, you can easily build a page without coding.</p>
-                            <div class="omga-07__content-btn pt--30">
-                                <a href="#cta" class="btn--primary goto">Get started</a>
-                            </div>
+                                    class="d-none d-sm-block d-md-none d-xl-block">for learn new hard skill</h2>
+                            <p>You can access this website anywhere and everywhere. Just by a single click you can learn
+                                many new hard skill that you need</p>
                         </div>
                     </div>
                 </div>
@@ -211,11 +207,11 @@
                         <div class="omga-07__hero-content ">
                             <h4 style="color: white" class="title">Get started now
                             </h4>
-                            <p style="color: white">Create custom landing pages with Omega that converts more visitors than any website. With lots of unique blocks, you can easily build a page without coding.</p>
+                            <p style="color: white">Upgrade your skill now by start learning with our professional mentors
+                                without wasting your time.</p>
                             <div class="omga-07__content-btn pt--30">
                                 <a href="#cta" class="btn--primary goto">Get started</a>
                             </div>
-
                         </div>
                     </div>
                 </div>
