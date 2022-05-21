@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -15,11 +16,7 @@ Route::get('/login', [loginController::class, 'loginStudent'])->name('login');
 
 
 Route::get('/login/mentor', [loginController::class, 'loginMentor']);
-Route::get('/', function () {
-    return view('landing', [
-        'title' => 'Sqeel.io'
-    ]);
-});
+Route::get('/', [IndexController::class, 'index']);
 
 
 
