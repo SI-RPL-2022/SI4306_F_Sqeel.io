@@ -3,9 +3,11 @@
 use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PlaylistController;
+use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
@@ -35,6 +37,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/materi/{playlist}', [PlaylistController::class, 'show']);
     Route::post('/enroll', [EnrollController::class, 'store']);
     Route::post('/review', [ReviewController::class, 'store']);
+    Route::post('/komentar', [KomentarController::class, 'store']);
+    Route::post('/reply', [ReplyController::class, 'store']);
 });
 
 Route::get('/library', [KategoriController::class, 'index']);

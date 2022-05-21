@@ -38,33 +38,80 @@
                                 aria-labelledby="home-tab" tabindex="0">{{ $video->deskripsi }}</div>
                             <div class="tab-pane fade" id="Forum-tab" role="tabpanel" aria-labelledby="profile-tab"
                                 tabindex="0">
-                                <div class="pertanyaan">
-                                    <img src="/storage/profile/{{ auth()->user()->profile }}" class="mentor mt-3"
-                                        style="margin-right:1rem;" alt="">
-                                    <a class="btn border-0 mt-2" data-bs-toggle="collapse" href="#collapseExample"
-                                        role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        <b>Bagaimana cara menginstall boostrap tanpa harus di download</b>
-                                    </a>
-                                    <div class="collapse" id="collapseExample">
-                                        <div class="forum">
-                                            <p> Some placeholder content for the collapse component. This panel is hidden by
-                                                default but revealed when the user activates the relevant trigger.</p>
+                                @foreach ($video->komentar as $komentar)
+                                    <div class="pertanyaan">
+                                        <img src="/storage/profile/{{ $komentar->user->profile }}" class="mentor mt-3"
+                                            style="margin-right:1rem;" alt="">
+                                        <a class="btn border-0 mt-3 isi" data-bs-toggle="collapse"
+                                            href="#komentar{{ $komentar->id }}" role="button" aria-expanded="false"
+                                            aria-controls="collapseExample">
+                                            <b>{{ $komentar->judul }}</b>
+                                        </a>
+                                        <div class="collapse" id="komentar{{ $komentar->id }}">
+                                            <div class="forum">
+                                                <p>{{ $komentar->isi }}</p>
+                                                @if (!is_null($komentar->gambar))
+                                                    <img width="500px" class="pb-2"
+                                                        src="/storage/komentar/{{ $komentar->gambar }}" alt="">
+                                                @endif
+                                                <p class="mt-2"><b>Balasan:</b></p>
+                                                @foreach ($komentar->reply as $reply)
+                                                    <div class="reply-reply">
+                                                        <a class="author" href="">{{ $reply->user->nama }}</a>
+                                                        <span
+                                                            class="date">{{ $reply->created_at->diffForHumans() }}</span>
+                                                        <div class="text">{{ $reply->isi }}</div>
+                                                    </div>
+                                                @endforeach
+                                                {{-- form Balasan --}}
+                                                <form action="/reply" method="POST">
+                                                    @csrf
+                                                    <input type="text" name="idvideo" id="idvideo"
+                                                        value="{{ $video->idvideo }}" hidden>
+                                                    <input type="text" hidden name="user_id" id="user_id"
+                                                        value="{{ auth()->user()->id }}">
+                                                    <input type="text" hidden name="komentar_id" id="komentar_id"
+                                                        value="{{ $komentar->id }}">
+                                                    <div class="input-group mb-3 ps-3">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Ketik Balasan..." name="isi">
+                                                        <button class="btn btn-outline-secondary" type="submit"
+                                                            id="button-addon2"><i class="fa-solid fa-reply"></i></button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="pertanyaan">
-                                    <img src="/storage/profile/{{ auth()->user()->profile }}" class="mentor mt-3"
-                                        style="margin-right:1rem;" alt="">
-                                    <a class="btn border-0 mt-2" data-bs-toggle="collapse" href="#collapseExample2"
+                                @endforeach
+                                <div class="tambah-pertanyaan">
+                                    <a class="btn border-0 mt-3" data-bs-toggle="collapse" href="#collapseExample3"
                                         role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        <b>Bagaimana cara menginstall boostrap tanpa harus di download</b>
+                                        <b>Tambah Pertanyaan</b>
                                     </a>
-                                    <div class="collapse" id="collapseExample2">
-                                        <div class="forum">
-                                            <p> Some placeholder content for the collapse component. This panel is hidden by
-                                                default but revealed when the user activates the relevant trigger.</p>
+                                    <form action="/komentar" class="mb-3 collapse" id="collapseExample3" method="POST"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="mb-3">
+                                            <label for="judul" class="form-label">Judul</label>
+                                            <input type="text" class="form-control" id="judul" name="judul">
                                         </div>
-                                    </div>
+                                        <div class="mb-3">
+                                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                                            <input type="text" class="form-control" name="isi" id="isi">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="formFile" class="form-label">Sisipkan Gambar</label>
+                                            <input class="form-control" type="file" name="gambar" id="gambar"
+                                                accept="image/*">
+                                        </div>
+                                        <input type="text" name="user_id" id="user_id" value="{{ auth()->user()->id }}"
+                                            hidden>
+                                        <input type="text" name="video_id" id="video_id" value="{{ $video->id }}"
+                                            hidden>
+                                        <input type="text" name="idvideo" id="idvideo" value="{{ $video->idvideo }}"
+                                            hidden>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
