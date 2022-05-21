@@ -122,3 +122,13 @@ footer{
 #now{
     background-color: #c1bdd83c;
 }
+
+/* Sidebar Filter */
+#collapseFilter{
+    height: 5rem;
+}
+
+#filterButton{
+    background-color: #B48BF0;
+    color: white;
+}

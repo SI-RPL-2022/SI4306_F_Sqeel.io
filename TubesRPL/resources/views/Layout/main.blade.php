@@ -23,12 +23,13 @@
     <nav class="navbar navbar-expand-lg sticky-top justify-content-center" style="background-color: white;">
         <div class="container" style=" transform: translatex(6%);">
             <a class="navbar-brand m-3" href="/"><img src="/images/logo.png" alt="" width="85%"></a>
-            <form action="" class="ms-3" style="width: 30rem">
+            <form action="/search" class="ms-3" style="width: 30rem">
                 <div class="input-group flex-nowrap">
-                    <button class="input-group-text" id="addon-wrapping" style="background: none; border-right:none">
+                    <button type="submit" class="input-group-text" id="addon-wrapping"
+                        style="background: none; border-right:none">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                    <input type="text" class="form-control" placeholder="Search Course" aria-label="Username"
+                    <input type="text" class="form-control" placeholder="Search Course" name="key"
                         aria-describedby="addon-wrapping" style="border-left: none">
                 </div>
             </form>
