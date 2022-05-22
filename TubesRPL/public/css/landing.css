@@ -27437,13 +27437,11 @@ p {
 /*>>>>>>>> Hero area styling 7 (landing-7)<<<<<<<<<*/
 .omga-07__hero-area {
   padding-top: 110px;
-  padding-bottom: 50px;
 }
 
 @media (min-width: 768px) {
   .omga-07__hero-area {
     padding-top: 140px;
-    padding-bottom: 60px;
   }
 }
 
@@ -32855,6 +32853,7 @@ p {
 #halaman1 {
   background-image: url("/images/bg.png");
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .parent {

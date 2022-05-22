@@ -83,7 +83,7 @@
 
 
 
-    <div class="container" id="page-container">
+    <div class="container-fluid" id="page-container">
         <div class="div" id="content-wrap">
             @yield('content')
         </div>

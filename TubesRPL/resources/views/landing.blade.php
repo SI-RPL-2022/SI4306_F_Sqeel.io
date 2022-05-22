@@ -1,4 +1,4 @@
-@extends('Layout.main')
+@extends('Layout.landing')
 @section('css')
     <link rel="stylesheet" href="/fonts/icon-font/css/style.css">
     <link rel="stylesheet" href="/fonts/typography-font/typo.css">
