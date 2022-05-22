@@ -133,6 +133,30 @@ footer{
 }
 
 
+.filter{
+    list-style: none;
+    padding: 0;
+}
+
+.filter-item {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.filter-item a{
+    text-decoration: none;
+    color: rgb(70, 68, 70);
+}
+
+.collapse-li{
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    transition: 1s;
+}
+
+.collapse-horizontal{
+  transition: 0.5s;
+}
 
 /* Comment Reply */
 .reply-reply {
@@ -174,3 +198,4 @@ footer{
 .isi:hover{
     color: gray;
 }
+
