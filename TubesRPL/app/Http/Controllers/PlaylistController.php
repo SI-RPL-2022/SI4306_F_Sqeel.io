@@ -137,11 +137,28 @@ class PlaylistController extends Controller
 
     public function search(Request $request)
     {
+        if (isset($request->mentor)) {
+
+            $playlists = DB::table('playlists')
+                ->join('users', 'playlists.user_id', '=', 'users.id')
+                ->where('judul', 'like', '%' . $request->key . '%')
+                ->where('nama', 'like', '%' . $request->mentor . '%')
+                ->get();
+            return view('Student.search', [
+                'title' => 'Search Materi: ' . $request->key,
+                'mentor' => $request->mentor,
+                'key' => $request->key,
+                'playlists' => $playlists
+            ]);
+        }
         $playlists = playlist::latest();
-        $playlists->where('judul', 'like', '%' . $request->key . '%');
+        $playlists = DB::table('playlists')
+            ->join('users', 'playlists.user_id', '=', 'users.id')
+            ->where('judul', 'like', '%' . $request->key . '%')
+            ->get();
         return view('Student.search', [
-            'title' => 'Search Materi',
-            'playlists' => $playlists->get(),
+            'title' => 'Search Materi: ' . $request->key,
+            'playlists' => $playlists,
             'key' => $request->key
         ]);
     }

@@ -36,33 +36,6 @@
                             </li>
                         </div>
                         <hr>
-                        <li class="filter-item">Enrollment</li>
-                        <div id="Enrollment-filter">
-                            <form action="">
-                                <li class="collapse-li">
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="">
-                                            0-5
-                                        </label>
-                                        <input class="form-check-input" type="checkbox" value="" id="">
-                                    </div>
-                                </li>
-                                <li class="collapse-li">
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="">
-                                            >10
-                                        </label>
-                                        <input class="form-check-input" type="checkbox" value="" id="">
-                                    </div>
-                                </li>
-                            </form>
-                        </div>
-                        <hr>
-                        {{-- <li class="filter-item"><a href="">Topik</a></li>
-                        <div>
-
-                        </div> --}}
-                        {{-- <hr> --}}
                     </ul>
                 </div>
             </div>

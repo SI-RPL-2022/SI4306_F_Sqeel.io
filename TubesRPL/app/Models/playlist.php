@@ -4,11 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class playlist extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function scopePopular($query)
+    {
+        return $query->where('enrollment', '>', 0);
+    }
 
     public function Kategori()
     {
@@ -32,5 +38,9 @@ class playlist extends Model
     public function transaksi()
     {
         return $this->hasMany(transaksi::class);
+    }
+    public function enroll()
+    {
+        return $this->hasMany(Enroll::class);
     }
 }

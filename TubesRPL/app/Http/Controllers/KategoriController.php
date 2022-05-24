@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use App\Http\Requests\StoreKategoriRequest;
 use App\Http\Requests\UpdateKategoriRequest;
+use App\Models\playlist;
 use Illuminate\Http\Request;
 use App\Models\user;
 use Illuminate\Support\Facades\DB;
@@ -68,7 +69,9 @@ class KategoriController extends Controller
             ]);
         }
         $playlists = DB::table('playlists')
-            ->join('users', 'playlists.user_id', '=', 'users.id')->get();
+            ->join('users', 'playlists.user_id', '=', 'users.id')
+            ->where('kategori_id', '=', $kategori->id)
+            ->get();
         return view('Student.kategori', [
             'title' => $kategori->namaKategori,
             'kategori' => $kategori,

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId("user_id");
             $table->foreignId("kategori_id");
             $table->longtext('deskripsi');
+            $table->integer('enrollment')->default(0);
         });
     }
 

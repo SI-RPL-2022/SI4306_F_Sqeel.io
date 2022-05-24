@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Enroll;
+use App\Models\playlist;
 use Illuminate\Http\Request;
 
 class EnrollController extends Controller
@@ -40,7 +41,14 @@ class EnrollController extends Controller
             'playlist_id'   => $request->playlist_id
         ]);
 
-        return redirect('/materi/'.$request['playlist_id']);
+        $a = enroll::where('playlist_id', $request->playlist_id)
+            ->get();
+        $enrollment = count($a);
+        playlist::where('id', $request->playlist_id)
+            ->update(['enrollment' => $enrollment]);
+
+
+        return redirect('/materi/' . $request['playlist_id']);
     }
 
     /**
