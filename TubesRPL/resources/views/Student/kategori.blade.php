@@ -20,14 +20,14 @@
                 <div class="container">
                     <ul class="filter">
                         <hr>
-                        <li class="filter-item"><a href="#Mentor-filter" data-bs-toggle="collapse"
-                                role="button">Mentor</a></li>
-                        <div class="collapse" id="Mentor-filter">
+                        <li class="filter-item">Mentor</li>
+                        <div id="Mentor-filter">
                             <li class="collapse-li">
-                                <form action="">
+                                <form action="/library/{{ $kategori->namaKategori }}">
                                     <div class="input-group input-group-sm mb-3">
                                         <input placeholder="Nama Mentor..." type="text" class="form-control"
-                                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                                            name="mentor">
                                         <span class="input-group-text" id="inputGroup-sizing-sm"><button
                                                 class="border-0" type="submit"><i
                                                     class="fa-solid fa-magnifying-glass"></i></button></span>
@@ -36,9 +36,8 @@
                             </li>
                         </div>
                         <hr>
-                        <li class="filter-item"><a href="#Enrollment-filter" data-bs-toggle="collapse"
-                                role="button">Enrollment</a></li>
-                        <div class="collapse" id="Enrollment-filter">
+                        <li class="filter-item">Enrollment</li>
+                        <div id="Enrollment-filter">
                             <form action="">
                                 <li class="collapse-li">
                                     <div class="form-check">
@@ -70,15 +69,15 @@
             <div class="col">
                 <center>
                     <div class="row row-cols-3" style="width: 80%">
-                        @foreach ($kategori->playlist as $playlist)
+                        @foreach ($playlists as $playlist)
                             <div class="col">
                                 <a href="/materi/{{ $playlist->id }}" class="kategori">
                                     <div class="card border" id="web">
-                                        <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-3"
+                                        <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-5"
                                             alt="..." style="width: 15.5rem; height: 15rem">
                                         <div class="card-body text-center">
                                             <h5 class="card-title">{{ $playlist->judul }}</h5>
-                                            <p class="card-text">by: {{ $playlist->user->nama }}</p>
+                                            <p class="card-text">by: {{ $playlist->nama }}</p>
                                         </div>
                                     </div>
                                 </a>

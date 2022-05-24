@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use App\Http\Requests\StoreKategoriRequest;
 use App\Http\Requests\UpdateKategoriRequest;
+use Illuminate\Http\Request;
+use App\Models\user;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
@@ -48,11 +51,28 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show(Kategori $kategori, Request $request)
     {
+        if (isset($request->mentor)) {
+
+            $playlists = DB::table('playlists')
+                ->join('users', 'playlists.user_id', '=', 'users.id')
+                ->where('kategori_id', '=', $kategori->id)
+                ->where('nama', 'like', '%' . $request->mentor . '%')
+                ->get();
+            return view('Student.kategori', [
+                'title' => $kategori->namaKategori,
+                'kategori' => $kategori,
+                'mentor' => $request->mentor,
+                'playlists' => $playlists
+            ]);
+        }
+        $playlists = DB::table('playlists')
+            ->join('users', 'playlists.user_id', '=', 'users.id')->get();
         return view('Student.kategori', [
             'title' => $kategori->namaKategori,
-            'kategori' => $kategori
+            'kategori' => $kategori,
+            'playlists' => $playlists
         ]);
     }
 
