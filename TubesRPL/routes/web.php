@@ -56,3 +56,11 @@ Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::post('/create/video', [VideoController::class, 'simpan']);
     Route::get('/create/{playlist:judul}/video', [VideoController::class, 'create']);
 });
+
+
+
+Route::get('/editcourse', function () {
+    return view('Mentor.editcourse', [
+        'title' => 'edit course'
+    ]);
+});

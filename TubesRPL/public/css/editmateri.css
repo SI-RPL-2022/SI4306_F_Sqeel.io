@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Calibri';
+}
+
+.nav-link{
+    color: black;
+    font-weight: 500;
+}
+
+
+.profile{
+    width: 30px;
+    border-radius: 50%;
+    
+}
+.mentor{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+}
+footer{
+    background-color: #1D293F;
+    height: 3.5rem;
+    color: white;
+    padding: 15px;
+    font-weight: 300;
+    font-size: small;
+}
+
+.lib-subtittle{
+    color: #9896a5;
+}
+#list{
+    margin-left: 800px;
+}
+
+.card{
+    max-width: 250px;
+    border: none;
+    border-radius: 10px;
+}
+
+.kategori{
+    text-decoration: none;
+    color: #1D293F;
+}
+
+
+#page-container {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #footer {
+    margin-top: auto;
+  }
+
+
+/* Untuk Halaman index.Materi */
+.webdev{
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
+    margin-top: 1.5rem;
+}
+
+.deskripsi{
+    color: #9C9AAA;
+}
+
+.deskripsi p{
+    color: #9C9AAA;
+    text-align: justify;
+}
+
+.enroll{
+    background-color: #B48BF0;
+    color: white;
+    border: none;
+}
+
+.enroll:hover{
+    background-color: #8c66c5;
+    color: white;
+}
+.rounded-pill{
+    border: none;
+    color: #748FED;
+    background: #ece8f3;
+}
+
+.col-7 .border{
+    width: 38rem;
+}
+
+.vid{
+    color: black;
+}
+
+.listvid{
+    padding: 4px;
+    margin-bottom: 5px;
+}
+
+.list{
+    padding-left: 2.5rem;
+}
+.list:hover{
+    background-color: #9c9aaa1a;
+}
+
+.dfy{
+    font-size: 12.9px;
+    color: #9C9AAA;
+}
+
+#now{
+    background-color: #c1bdd83c;
+}
+
+/* Sidebar Filter */
+#collapseFilter{
+    height: 5rem;
+}
+
+#filterButton{
+    background-color: #B48BF0;
+    color: white;
+}
+
+
+.filter{
+    list-style: none;
+    padding: 0;
+}
+
+.filter-item {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.filter-item a{
+    text-decoration: none;
+    color: rgb(70, 68, 70);
+}
+
+.collapse-li{
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    transition: 1s;
+}
+
+.collapse-horizontal{
+  transition: 0.5s;
+}
+
+/* Comment Reply */
+.reply-reply {
+    margin-left: 1.5rem;
+}
+
+.reply-reply .date{
+    margin: 0rem 0rem 0rem 1rem;
+    padding: 0rem;
+    font-weight: bold;
+    font-size: 12px;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.reply-reply .text{
+    margin-bottom: 0.5rem;
+}
+
+.forum{
+    margin-left: 4rem;
+}
+
+.reply-reply a{
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tambah-pertanyaan a :hover{
+    color: gray;
+}
+.tambah-pertanyaan button{
+    border: none;
+    background-color: #8c66c5;
+}
+.isi:hover{
+    color: gray;
+}
+
+/* content field */
+.cancel{
+    background: #FFFFFF;
+    border: 1px solid #EAE9F2;
+    color: #9C9AAA;
+    margin-right: 5px;
+    height: 30px;
+}
+
+.create{
+    background: #B48BF0;
+    color: #FFFFFF;
+    height: 30px;
+
+}
+
+.btn{
+    float: right;
+    height: 50px;
+}
+
+.edit-container{
+    background-color: #FFFFFF;
+    width: 40%;
+    padding: 30px;
+    position: relative;
+
+}
