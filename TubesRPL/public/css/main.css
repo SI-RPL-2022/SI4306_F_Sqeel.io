@@ -1,27 +1,29 @@
-*{
+* {
     margin: 0;
     text-decoration: none;
     font-family: 'Calibri';
 }
 
-.nav-link{
+.nav-link {
     color: black;
     font-weight: 500;
 }
 
 
-.profile{
+.profile {
     width: 30px;
     border-radius: 50%;
-    
+
 }
-.mentor{
+
+.mentor {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    
+
 }
-footer{
+
+footer {
     background-color: #1D293F;
     height: 3.5rem;
     color: white;
@@ -30,20 +32,21 @@ footer{
     font-size: small;
 }
 
-.lib-subtittle{
+.lib-subtittle {
     color: #9896a5;
 }
-#list{
+
+#list {
     margin-left: 800px;
 }
 
-.card{
+.card {
     max-width: 250px;
     border: none;
     border-radius: 10px;
 }
 
-.kategori{
+.kategori {
     text-decoration: none;
     color: #1D293F;
 }
@@ -54,86 +57,88 @@ footer{
     min-height: 75vh;
     display: flex;
     flex-direction: column;
-  }
-  
-  #footer {
+}
+
+#footer {
     margin-top: auto;
-  }
+}
 
 
 /* Untuk Halaman index.Materi */
-.webdev{
+.webdev {
     font-weight: 600;
     font-family: 'Archivo', sans-serif;
     margin-top: 1.5rem;
 }
 
-.deskripsi{
+.deskripsi {
     color: #9C9AAA;
 }
 
-.deskripsi p{
+.deskripsi p {
     color: #9C9AAA;
     text-align: justify;
 }
 
-.enroll{
+.enroll {
     background-color: #B48BF0;
     color: white;
     border: none;
 }
 
-.enroll:hover{
+.enroll:hover {
     background-color: #8c66c5;
     color: white;
 }
-.rounded-pill{
+
+.rounded-pill {
     border: none;
     color: #748FED;
     background: #ece8f3;
 }
 
-.col-7 .border{
+.col-7 .border {
     width: 38rem;
 }
 
-.vid{
+.vid {
     color: black;
 }
 
-.listvid{
+.listvid {
     padding: 4px;
     margin-bottom: 5px;
 }
 
-.list{
+.list {
     padding-left: 2.5rem;
 }
-.list:hover{
+
+.list:hover {
     background-color: #9c9aaa1a;
 }
 
-.dfy{
+.dfy {
     font-size: 12.9px;
     color: #9C9AAA;
 }
 
-#now{
+#now {
     background-color: #c1bdd83c;
 }
 
 /* Sidebar Filter */
-#collapseFilter{
+#collapseFilter {
     height: 5rem;
 }
 
-#filterButton{
+#filterButton {
     background-color: #B48BF0;
     color: white;
 }
 
 
-.filter{
+.filter {
     list-style: none;
     padding: 0;
 }
@@ -143,19 +148,19 @@ footer{
     font-size: larger;
 }
 
-.filter-item a{
+.filter-item a {
     text-decoration: none;
     color: rgb(70, 68, 70);
 }
 
-.collapse-li{
+.collapse-li {
     padding-left: 1rem;
     padding-top: 0.5rem;
     transition: 1s;
 }
 
-.collapse-horizontal{
-  transition: 0.5s;
+.collapse-horizontal {
+    transition: 0.5s;
 }
 
 /* Comment Reply */
@@ -163,7 +168,7 @@ footer{
     margin-left: 1.5rem;
 }
 
-.reply-reply .date{
+.reply-reply .date {
     margin: 0rem 0rem 0rem 1rem;
     padding: 0rem;
     font-weight: bold;
@@ -172,15 +177,15 @@ footer{
     color: rgba(0, 0, 0, 0.4);
 }
 
-.reply-reply .text{
+.reply-reply .text {
     margin-bottom: 0.5rem;
 }
 
-.forum{
+.forum {
     margin-left: 4rem;
 }
 
-.reply-reply a{
+.reply-reply a {
     font-size: 1rem;
     margin-top: 1.5rem;
     color: rgba(0, 0, 0, 0.87);
@@ -188,14 +193,32 @@ footer{
     text-decoration: none;
 }
 
-.tambah-pertanyaan a :hover{
-    color: gray;
-}
-.tambah-pertanyaan button{
-    border: none;
-    background-color: #8c66c5;
-}
-.isi:hover{
+.tambah-pertanyaan a :hover {
     color: gray;
 }
 
+.tambah-pertanyaan button {
+    border: none;
+    background-color: #8c66c5;
+}
+
+.isi:hover {
+    color: gray;
+}
+
+/* Dashboard */
+
+.analytic {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+}
+
+span.courses {
+    font-size: 1.5rem;
+}
+
+.new {
+    border-radius: 10px;
+}

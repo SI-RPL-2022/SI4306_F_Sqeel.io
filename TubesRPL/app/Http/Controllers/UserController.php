@@ -22,7 +22,7 @@ class UserController extends Controller
 
     public function indexMentor()
     {
-        return view('Mentor.Index', [
+        return view('Mentor.dashboard', [
             'title' => 'Sqeel | Mentor Index'
         ]);
     }

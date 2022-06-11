@@ -1,20 +1,18 @@
-body{
+body {
     background-color: #FFFFFF;
     font-family: 'Helvetica Neue';
 }
 
-.container{
+.container {
     background-color: #FFFFFF;
     width: 40%;
     padding: 30px;
     position: relative;
-    top:5em;
+    top: 5em;
 }
 
 
-
-
-.cancel{
+.cancel {
     background: #FFFFFF;
     border: 1px solid #EAE9F2;
     color: #9C9AAA;
@@ -22,15 +20,14 @@ body{
     height: 30px;
 }
 
-.create{
+.create {
     background: #B48BF0;
     color: #FFFFFF;
     height: 30px;
 
 }
 
-.btn{
+.btn {
     float: right;
     height: 50px;
 }
-

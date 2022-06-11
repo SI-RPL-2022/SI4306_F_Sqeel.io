@@ -1,4 +1,4 @@
-@extends('layout.mentor')
+@extends('layout.main')
 
 @section('content')
     <form class="" action="/create/materi" method="POST" enctype="multipart/form-data">
