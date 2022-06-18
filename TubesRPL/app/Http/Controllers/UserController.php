@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enroll;
 use App\Models\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -16,14 +18,26 @@ class UserController extends Controller
     public function index()
     {
         return view('Student.Index', [
-            'title' => 'Sqeel | Index'
+            'title' => 'Sqeel.io | Index'
         ]);
     }
 
     public function indexMentor()
     {
+        $user =  auth()->user();
+        $playlist = $user->playlist;
+        // dd(count($playlist[1]->enroll));
+        $data = [];
+        $count = [];
+        foreach ($playlist as $list) {
+            $data[] = $list->judul;
+            $count[] = count($list->enroll);
+        }
         return view('Mentor.dashboard', [
-            'title' => 'Sqeel | Mentor Index'
+            'title' => 'Sqeel.io | Mentor Dashboard',
+            'playlist' => $playlist,
+            'label2' => json_encode($data),
+            'count' => json_encode($count)
         ]);
     }
 
@@ -85,15 +99,20 @@ class UserController extends Controller
         if ($request->hasFile('profile')) {
             $filename = $request->nama . '.jpg';
             $request->profile->storeAs('profile', $filename, 'public');
-        }
+            $data = [
+                'nama' => $request->nama,
+                'profile' => $filename,
+                'bio' => $request->bio,
 
+            ];
+            User::where('id', $id)
+                ->update($data);
+            return redirect('/');
+        }
         $data = [
             'nama' => $request->nama,
-            'profile' => $filename,
             'bio' => $request->bio,
-
         ];
-
         User::where('id', $id)
             ->update($data);
 

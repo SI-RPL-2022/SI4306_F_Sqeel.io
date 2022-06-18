@@ -109,7 +109,10 @@ class PlaylistController extends Controller
      */
     public function edit(playlist $playlist)
     {
-        //
+        return view('Mentor.editcourse', [
+            'title' => "edit materi " . $playlist->judul,
+            'playlist' => $playlist
+        ]);
     }
 
     /**
@@ -119,9 +122,32 @@ class PlaylistController extends Controller
      * @param  \App\Models\playlist  $playlist
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateplaylistRequest $request, playlist $playlist)
+    public function update(Request $request)
     {
-        //
+        if ($request->hasFile('thumbnail')) {
+            $filename = $request['judul'] . " by user " . $request['user_id'] . '.jpg';
+            $request->thumbnail->storeAs('thumbnail', $filename, 'public');
+            $data = [
+                'judul' => $request['judul'],
+                'thumbnail' => $filename,
+                'user_id' => $request['user_id'],
+                'kategori_id' => $request['kategori_id'],
+                'deskripsi' => $request['deskripsi']
+            ];
+            playlist::where('id', $request['id'])
+                ->update($data);
+            return redirect('/mentor/index');
+        }
+        $data = [
+            'judul' => $request['judul'],
+            'user_id' => $request['user_id'],
+            'kategori_id' => $request['kategori_id'],
+            'deskripsi' => $request['deskripsi']
+        ];
+        playlist::where('id', $request['id'])
+            ->update($data);
+
+        return redirect('/mentor/index');
     }
 
     /**

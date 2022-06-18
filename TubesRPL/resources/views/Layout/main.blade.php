@@ -15,6 +15,7 @@
 
     {{-- Link CSS --}}
     <link rel="stylesheet" href="/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     @yield('css')
 
@@ -59,7 +60,10 @@
                                 {{ auth()->user()->nama }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="dropdown-item" href="#">User Dashboard</a></li>
+                                <li><a class="dropdown-item"
+                                        href="/{{ strtolower(auth()->user()->role->namaRole) }}/index">User
+                                        Dashboard</a>
+                                </li>
                                 <li><a class="dropdown-item" href="/profile/{{ auth()->user()->id }}">Edit
                                         Profile</a></li>
                                 <li>

@@ -52,6 +52,8 @@ Route::get('/search', [PlaylistController::class, 'search']);
 Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::get('/mentor/index', [UserController::class, 'indexMentor']);
     Route::get('/create/materi', [PlaylistController::class, 'create']);
+    Route::get('/edit/materi/{playlist:judul}', [PlaylistController::class, 'edit']);
+    Route::post('/edit/materi/{playlist:judul}', [PlaylistController::class, 'update']);
     Route::post('/create/materi', [PlaylistController::class, 'simpan']);
     Route::post('/create/video', [VideoController::class, 'simpan']);
     Route::get('/create/{playlist:judul}/video', [VideoController::class, 'create']);

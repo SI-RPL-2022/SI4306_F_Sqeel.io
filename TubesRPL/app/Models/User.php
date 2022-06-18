@@ -45,4 +45,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(playlist::class);
     }
+    public function role()
+    {
+        return $this->belongsTo(role::class);
+    }
 }
