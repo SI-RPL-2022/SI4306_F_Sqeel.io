@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends(auth()->user()->role_id == 2 ? 'layout.mentor' : 'layout.main')
 
 @section('content')
     <form class="container" action="/profile/{{ $user->id }}" method="POST" enctype="multipart/form-data"
@@ -23,8 +23,7 @@
         </div>
         <div class=" mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
-            <textarea class="form-control" id="bio" name="bio" rows="3"
-                placeholder="Enter Short Bio...">{{ $user->bio }}</textarea>
+            <textarea class="form-control" id="bio" name="bio" rows="3" placeholder="Enter Short Bio...">{{ $user->bio }}</textarea>
         </div>
         <hr>
         <div class="float-end">

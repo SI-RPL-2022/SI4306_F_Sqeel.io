@@ -16,11 +16,16 @@
 
 }
 
+.profile-dashboard {
+    width: 100px;
+    border-radius: 50%;
+
+}
+
 .mentor {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-
 }
 
 footer {
