@@ -20,7 +20,7 @@
                                 class="fa-regular fa-pen-to-square"></i></a>
                         <button class="btn b-deletecourse"><i class="fa-regular fa-trash-can"></i></button>
                         <div class="card-body">
-                            <p>{{ $item->judul }}</p>
+                            <a href="/video/{{ $item->video[0]->idvideo }}">{{ $item->judul }}</a>
                         </div>
                     </div>
                 </div>

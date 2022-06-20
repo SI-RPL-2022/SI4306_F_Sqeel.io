@@ -106,3 +106,8 @@
     /* Disable horizontal scroll */
     padding-top: 20px;
 }
+
+.d-icon {
+    color: #B48BF0;
+    font-size: 2.5rem
+}
