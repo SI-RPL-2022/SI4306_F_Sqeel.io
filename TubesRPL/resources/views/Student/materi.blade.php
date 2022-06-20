@@ -1,7 +1,7 @@
-@extends('layout.main')
+@extends(auth()->user()->role_id == 2 ? 'layout.mentor' : 'layout.main')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid pb-5">
         <div class="main pt-4">
             <div class="row">
                 <div class="kiri col-9 border-end">
@@ -28,8 +28,8 @@
                                     aria-controls="Description-tab" aria-selected="true"><b>Video Description</b></button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                    data-bs-target="#Forum-tab" type="button" role="tab" aria-controls="Forum-tab"
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Forum-tab"
+                                    type="button" role="tab" aria-controls="Forum-tab"
                                     aria-selected="false"><b>Forum</b></button>
                             </li>
                         </ul>
@@ -57,7 +57,11 @@
                                                 <p class="mt-2"><b>Balasan:</b></p>
                                                 @foreach ($komentar->reply as $reply)
                                                     <div class="reply-reply">
-                                                        <a class="author" href="">{{ $reply->user->nama }}</a>
+                                                        <b class="author">{{ $reply->user->nama }}
+                                                            @if ($reply->user->id == $playlist->user_id)
+                                                                <span class="rounded-pill ms-2 p-1">Creator</span>
+                                                            @endif
+                                                        </b>
                                                         <span
                                                             class="date">{{ $reply->created_at->diffForHumans() }}</span>
                                                         <div class="text">{{ $reply->isi }}</div>
@@ -84,7 +88,7 @@
                                     </div>
                                 @endforeach
                                 <div class="tambah-pertanyaan">
-                                    <a class="btn border-0 mt-3" data-bs-toggle="collapse" href="#collapseExample3"
+                                    <a class="btn border mt-3" data-bs-toggle="collapse" href="#collapseExample3"
                                         role="button" aria-expanded="false" aria-controls="collapseExample">
                                         <b>Tambah Pertanyaan</b>
                                     </a>
@@ -104,12 +108,12 @@
                                             <input class="form-control" type="file" name="gambar" id="gambar"
                                                 accept="image/*">
                                         </div>
-                                        <input type="text" name="user_id" id="user_id" value="{{ auth()->user()->id }}"
-                                            hidden>
-                                        <input type="text" name="video_id" id="video_id" value="{{ $video->id }}"
-                                            hidden>
-                                        <input type="text" name="idvideo" id="idvideo" value="{{ $video->idvideo }}"
-                                            hidden>
+                                        <input type="text" name="user_id" id="user_id"
+                                            value="{{ auth()->user()->id }}" hidden>
+                                        <input type="text" name="video_id" id="video_id"
+                                            value="{{ $video->id }}" hidden>
+                                        <input type="text" name="idvideo" id="idvideo"
+                                            value="{{ $video->idvideo }}" hidden>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
                                 </div>
@@ -122,11 +126,15 @@
                 <div class="kanan col border">
                     <div class="div">
                         <h5 class=" mb-2 mt-3">The Complete of {{ $playlist->judul }} Course</h5>
-                        <div class="progress mb-4">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ $progress }}"
-                                aria-valuemin="0" aria-valuemax="100"
-                                style="background-color: #A574ED; width:{{ $progress }}%">{{ $progress }}%</div>
-                        </div>
+                        @if (auth()->user()->role_id == 1)
+                            <div class="progress mb-4">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ $progress }}"
+                                    aria-valuemin="0" aria-valuemax="100"
+                                    style="background-color: #A574ED; width:{{ $progress }}%">{{ $progress }}%
+                                </div>
+                            </div>
+                        @endif
+
                         <hr>
 
 
