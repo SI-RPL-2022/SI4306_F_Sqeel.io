@@ -18,6 +18,7 @@
 
 .profile-dashboard {
     width: 100px;
+    height: 100px;
     border-radius: 50%;
 
 }
@@ -311,4 +312,11 @@ footer {
     position: absolute;
     text-align: right;
 
+}
+
+/* Mentor Videos */
+
+
+.videos tr:nth-child(even) {
+    background-color: #f8f7ff;
 }
