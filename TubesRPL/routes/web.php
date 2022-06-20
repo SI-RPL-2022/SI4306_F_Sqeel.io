@@ -66,9 +66,15 @@ Route::get('/cobaridho', function () {
     ]);
 });
 
-Route::get('/cobaoscar', function () {
-    return view('Mentor.', [
+Route::get('/review', function () {
+    return view('Mentor.review', [
         'title' => 'My Reviews'
+    ]);
+});
+
+Route::get('/editvideo', function () {
+    return view('Mentor.editvideo', [
+        'title' => 'edit video'
     ]);
 });
 
