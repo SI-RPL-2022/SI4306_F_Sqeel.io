@@ -6,6 +6,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MentorDashboardController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\ReviewController;
@@ -51,7 +52,11 @@ Route::get('/search', [PlaylistController::class, 'search']);
 
 Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::get('/mentor/index', [UserController::class, 'indexMentor']);
-    Route::get('/mentor/mycourse', [PlaylistController::class, 'mycourses']);
+    Route::get('/mentor/mycourse', [MentorDashboardController::class, 'mycourses']);
+    Route::get('/mentor/myreviews/', [MentorDashboardController::class, 'myreviewsindex']);
+    Route::get('/mentor/myreviews/{playlist:judul}', [MentorDashboardController::class, 'myreviews']);
+    Route::get('/mentor/myvideos/', [MentorDashboardController::class, 'myvideosindex']);
+    Route::get('/mentor/myvideos/{playlist:judul}', [MentorDashboardController::class, 'myvideos']);
     Route::get('/create/materi', [PlaylistController::class, 'create']);
     Route::get('/edit/materi/{playlist:judul}', [PlaylistController::class, 'edit']);
     Route::post('/edit/materi/{playlist:judul}', [PlaylistController::class, 'update']);

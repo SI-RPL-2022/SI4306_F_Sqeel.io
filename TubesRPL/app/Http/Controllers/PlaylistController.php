@@ -161,15 +161,7 @@ class PlaylistController extends Controller
         //
     }
 
-    public function mycourses()
-    {
-        $playlist = playlist::where('user_id', auth()->user()->id)
-            ->get();
-        return view('Mentor.mycourse', [
-            'title' => 'Sqeel.io | My Courses',
-            'playlist' => $playlist,
-        ]);
-    }
+
 
     public function search(Request $request)
     {
