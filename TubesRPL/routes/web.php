@@ -60,7 +60,17 @@ Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::get('/create/{playlist:judul}/video', [VideoController::class, 'create']);
 });
 
+Route::get('/cobaridho', function () {
+    return view('Mentor.', [
+        'title' => 'My Videos'
+    ]);
+});
 
+Route::get('/cobaoscar', function () {
+    return view('Mentor.', [
+        'title' => 'My Reviews'
+    ]);
+});
 
 Route::get('/editcourse', function () {
     return view('Mentor.editcourse', [
