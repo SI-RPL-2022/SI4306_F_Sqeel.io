@@ -11,10 +11,10 @@ class Enroll extends Model
     protected $guarded = ['id'];
     public function user()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
     public function playlist()
     {
-        return $this->hasMany(playlist::class);
+        return $this->belongsTo(playlist::class);
     }
 }

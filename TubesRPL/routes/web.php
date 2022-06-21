@@ -35,7 +35,7 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::get('/logout', [loginController::class, 'logout']);
 
-    Route::get('/materi/{playlist}', [PlaylistController::class, 'show']);
+    Route::get('/materi/{playlist:judul}', [PlaylistController::class, 'show']);
     Route::post('/enroll', [EnrollController::class, 'store']);
     Route::post('/review', [ReviewController::class, 'store']);
     Route::post('/komentar', [KomentarController::class, 'store']);

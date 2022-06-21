@@ -41,7 +41,7 @@
                         <a class="nav-link ms-3" href="/library">Library</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-4" href="#">My Learning</a>
+                        <a class="nav-link ms-4" href="/student/index">My Learning</a>
                     </li>
 
                     @auth

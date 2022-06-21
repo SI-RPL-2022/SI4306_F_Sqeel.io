@@ -28,6 +28,7 @@
                                 @csrf
                                 <input type="text" name="user_id" value="{{ auth()->user()->id }}" hidden>
                                 <input type="text" name="playlist_id" value="{{ $playlist->id }}" hidden>
+                                <input type="text" name="judul" value="{{ $playlist->judul }}" hidden>
                                 <button type="submit" class="btn btn enroll">Enroll Course</button>
                             </form>
                         @else
@@ -79,6 +80,7 @@
                                     @csrf
                                     <input type="text" name="user_id" value="{{ auth()->user()->id }}" hidden>
                                     <input type="text" name="playlist_id" value="{{ $playlist->id }}" hidden>
+                                    <input type="text" name="judul" value="{{ $playlist->judul }}" hidden>
                                     <textarea class="form-control" name="body" id="" cols="50" rows="8"
                                         placeholder="Write Your Review Here..."></textarea>
                                     <button type="submit" class="btn btn enroll">Post Review</button>

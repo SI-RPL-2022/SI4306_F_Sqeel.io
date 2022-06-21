@@ -2,65 +2,32 @@
 
 @section('content')
     <div>
-        <h4 class="enrolled">Enrolled Courses (8)</h4>
+        <h4 class="enrolled">Enrolled Courses ({{ count($enrolls) }})</h4>
         <center>
-            <div class=" d-flex justify-content-evenly flex-wrap mb-5">
-                <div class="  studentContent mb-5">
-                    <img src="/images/card/card.png" width="350px" alt="">
-                    <h5 class="studentTitle">The Complete Web Development <br> Bootcamp</h5>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
-                            aria-valuemax="100">
-                            <span class="percent text-center">25%</span>
-                        </div>
-
+            <div class="row row-cols-3" style="width: 80%">
+                @foreach ($enrolls as $enroll)
+                    {{-- @dd($enroll->playlist) --}}
+                    <div class="col mt-3">
+                        <a href="/materi/{{ $enroll->playlist->judul }}" class="kategori">
+                            <div class="card border p-3" id="web" style="height:18rem">
+                                <center>
+                                    <img src="/storage/thumbnail/{{ $enroll->playlist->thumbnail }}"
+                                        class="card-img-top p-2" alt="..." style="width:10rem;height:10rem">
+                                </center>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title" style="font-size: 16px">{{ $enroll->playlist->judul }}</h5>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{ $enroll->progress }}%;"
+                                        aria-valuenow="{{ $enroll->progress }}" aria-valuemin="0" aria-valuemax="100">
+                                        <span class="percent text-center">{{ $enroll->progress }}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="  studentContent">
-                    <img src="/images/card/card.png" width="350px" alt="">
-                    <h5 class="studentTitle">The Complete Web Development <br> Bootcamp</h5>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                </div>
-                <div class="studentContent">
-                    <img src="/images/card/card.png" width="350px" alt="">
-                    <h5 class="studentTitle">The Complete Web Development <br> Bootcamp</h5>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                </div>
-                <div class="studentContent">
-                    <img src="/images/card/card.png" width="350px" alt="">
-                    <h5>The Complete Web Development <br> Bootcamp</h5>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                </div>
-                <div class="studentContent">
-                    <img src="/images/card/card.png" width="350px" alt="">
-                    <h5>The Complete Web Development <br> Bootcamp</h5>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                </div>
-                <div class="  studentContent">
-                    <img src="/images/card/card.png" width="350px" alt="">
-                    <h5 class="studentTitle">The Complete Web Development <br> Bootcamp</h5>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div>
-                <button type="button" class="btn btn-outline loadMore">Load More</button>
-            </div>
-
         </center>
     </div>
 @endsection

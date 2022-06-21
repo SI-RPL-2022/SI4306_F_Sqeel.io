@@ -41,7 +41,7 @@ class ReviewController extends Controller
             'body' => $request->body
         ]);
 
-        return redirect('/materi/' . $request['playlist_id']);
+        return redirect('/materi/' . $request['judul']);
     }
 
     /**

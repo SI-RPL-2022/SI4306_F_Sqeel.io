@@ -39,7 +39,7 @@
                     <div class="row row-cols-3" style="width: 80%">
                         @foreach ($playlists as $playlist)
                             <div class="col">
-                                <a href="/materi/{{ $playlist->id }}" class="kategori">
+                                <a href="/materi/{{ $playlist->judul }}" class="kategori">
                                     <div class="card border" id="web">
                                         <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-3"
                                             alt="..." style="width: 15.5rem; height: 15rem">

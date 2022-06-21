@@ -17,8 +17,11 @@ class UserController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
+        $enrolls = Enroll::where('user_id', $user->id)->get();
         return view('Student.Index', [
-            'title' => 'Sqeel.io | Index'
+            'title' => 'Sqeel.io | Index',
+            'enrolls' => $enrolls,
         ]);
     }
 

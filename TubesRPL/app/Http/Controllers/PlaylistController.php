@@ -6,6 +6,7 @@ use App\Models\playlist;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreplaylistRequest;
 use App\Http\Requests\UpdateplaylistRequest;
+use App\Models\Enroll;
 use App\Models\review;
 use App\Models\transaksi;
 use App\Models\video;
@@ -160,6 +161,7 @@ class PlaylistController extends Controller
      */
     public function destroy(playlist $playlist)
     {
+        Enroll::where('playlist_id', $playlist->id)->delete();
         transaksi::where('playlist_id', $playlist->id)->delete();
         video::where('playlist_id', $playlist->id)->delete();
         $playlist->delete();

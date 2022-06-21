@@ -48,7 +48,7 @@ class EnrollController extends Controller
             ->update(['enrollment' => $enrollment]);
 
 
-        return redirect('/materi/' . $request['playlist_id']);
+        return redirect('/materi/' . $request['judul']);
     }
 
     /**

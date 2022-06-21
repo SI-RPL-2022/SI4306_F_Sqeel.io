@@ -8,8 +8,8 @@
     </div>
     <div class="container">
         {{-- Sidebar Filter --}}
-        <button class="btn mb-4" id="filterButton" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+        <button class="btn mb-4" id="filterButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter"
+            aria-expanded="false" aria-controls="collapseFilter">
             <i class="fa-solid fa-filter"></i> Filters
         </button>
 
@@ -28,9 +28,8 @@
                                         <input placeholder="Nama Mentor..." type="text" class="form-control"
                                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
                                             name="mentor">
-                                        <span class="input-group-text" id="inputGroup-sizing-sm"><button
-                                                class="border-0" type="submit"><i
-                                                    class="fa-solid fa-magnifying-glass"></i></button></span>
+                                        <span class="input-group-text" id="inputGroup-sizing-sm"><button class="border-0"
+                                                type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></span>
                                     </div>
                                 </form>
                             </li>
@@ -44,12 +43,12 @@
                     <div class="row row-cols-3" style="width: 80%">
                         @foreach ($playlists as $playlist)
                             <div class="col">
-                                <a href="/materi/{{ $playlist->id }}" class="kategori">
-                                    <div class="card border" id="web">
+                                <a href="/materi/{{ $playlist->judul }}" class="kategori">
+                                    <div class="card border" id="web" style="height: 20rem">
                                         <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-5"
                                             alt="..." style="width: 15.5rem; height: 15rem">
                                         <div class="card-body text-center">
-                                            <h5 class="card-title">{{ $playlist->judul }}</h5>
+                                            <h5 class="card-title" style="font-size: 16px">{{ $playlist->judul }}</h5>
                                             <p class="card-text">by: {{ $playlist->nama }}</p>
                                         </div>
                                     </div>
