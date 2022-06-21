@@ -1,7 +1,7 @@
 @extends('Layout.loginLayout')
 
 @section('login')
-    <form action="/login" method="post">
+    <form action="/loginstudent" method="post">
         @if (session()->has('msg'))
             <div class="alert alert-success">
                 {{ session()->get('msg') }}

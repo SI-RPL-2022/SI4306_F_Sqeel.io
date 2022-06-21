@@ -10,6 +10,19 @@ role::create([
     
 ])
 
+role::create([
+    'namaRole'=> 'Admin',
+])
+
+Admin
+
+User::create([
+    'nama' =>'admin',
+    'role_id' => '3',
+    'password' => Hash::make('admin'),
+    'email' => 'admin@admin.admin'
+])
+
 kategori
 Kategori::create([
     'namaKategori'=> 'Web Development',

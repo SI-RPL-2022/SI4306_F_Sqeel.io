@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\KategoriController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/login', [loginController::class, 'loginStudent'])->name('login');
 
@@ -47,7 +49,10 @@ Route::get('/library/{kategori:namaKategori}', [KategoriController::class, 'show
 Route::get('/signup', [RegisterController::class, 'index']);
 Route::post('/signup', [RegisterController::class, 'store']);
 Route::post('/signup/form', [RegisterController::class, 'signupview']);
-Route::post('/login', [loginController::class, 'authenticate']);
+Route::post('/loginstudent', [loginController::class, 'authstudent']);
+Route::post('/loginmentor', [loginController::class, 'authmentor']);
+Route::get('/admin', [loginController::class, 'loginadmin']);
+Route::post('/admin', [loginController::class, 'authadmin']);
 Route::get('/search', [PlaylistController::class, 'search']);
 
 Route::middleware(['auth', 'CekRole:2'])->group(function () {
@@ -70,26 +75,11 @@ Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::delete('/playlist/{playlist:id}', [PlaylistController::class, 'destroy']);
 });
 
+Route::middleware(['auth', 'CekRole:3'])->group(function () {
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'users']);
+});
 // Route::get('/cobaridho', function () {
 //     return view('Mentor.', [
 //         'title' => 'My Videos'
 //     ]);
 // });
-
-Route::get('/review', function () {
-    return view('Mentor.review', [
-        'title' => 'My Reviews'
-    ]);
-});
-
-Route::get('/editvideo', function () {
-    return view('Mentor.editvideo', [
-        'title' => 'edit video'
-    ]);
-});
-
-Route::get('/editcourse', function () {
-    return view('Mentor.editcourse', [
-        'title' => 'edit course'
-    ]);
-});
