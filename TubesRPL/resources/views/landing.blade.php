@@ -138,7 +138,7 @@
                                     <div class="row row-cols-3">
                                         @foreach ($latest as $playlist)
                                             <div class="col">
-                                                <a href="/materi/{{ $playlist->id }}" class="kategori">
+                                                <a href="/materi/{{ $playlist->judul }}" class="kategori">
                                                     <div class="card border" id="web">
                                                         <img src="/storage/thumbnail/{{ $playlist->thumbnail }}"
                                                             class="card-img-top p-3" alt="..."
@@ -173,8 +173,8 @@
                     </div>
                     <div class="col-lg-6 col-md-9 order-lg-1">
                         <div class="omga-07__content-text">
-                            <h2 class="title">Save tons of time <br
-                                    class="d-none d-sm-block d-md-none d-xl-block">for learn new hard skill</h2>
+                            <h2 class="title">Save tons of time <br class="d-none d-sm-block d-md-none d-xl-block">for
+                                learn new hard skill</h2>
                             <p>You can access this website anywhere and everywhere. Just by a single click you can learn
                                 many new hard skill that you need</p>
                         </div>

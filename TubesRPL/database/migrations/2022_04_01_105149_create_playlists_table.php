@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId("kategori_id");
             $table->longtext('deskripsi');
             $table->integer('enrollment')->default(0);
+            $table->integer('click')->default(0);
         });
     }
 

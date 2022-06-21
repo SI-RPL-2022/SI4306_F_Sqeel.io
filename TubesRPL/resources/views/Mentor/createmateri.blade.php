@@ -7,7 +7,8 @@
         <div class="mb-3 mt-4 row">
             <label class="mb-3 text-muted" for="">Title</label>
             <div class="col">
-                <input type="text" class="form-control" id="judul" name="judul" placeholder="Enter course title...">
+                <input type="text" class="form-control" id="judul" name="judul"
+                    placeholder="Enter course title...">
             </div>
         </div>
         <div class=" mb-4 row">
@@ -27,8 +28,7 @@
             <Label class="mb-3 text-muted">Description</Label>
             <div class="col">
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="deskripsi" name="deskripsi"
-                        style="height: 100px"></textarea>
+                    <textarea class="form-control" placeholder="Leave a comment here" id="deskripsi" name="deskripsi" style="height: 100px"></textarea>
                     <label for="deskripsi" class="text-muted">Enter course description...</label>
                 </div>
             </div>
@@ -41,9 +41,12 @@
         </div>
         <input type="text" value="{{ auth()->user()->id }}" name="user_id" id="user_id" hidden>
         <hr>
-        <div class="d-grid gap-3 d-md-block" style="margin-bottom: 5rem;">
+        <div class="d-grid gap-3 d-md-block mt-5" style="margin-bottom: 5rem;">
             <button type="submit" class="btn create btn-lg">Create</button>
-            <button type="button" class="btn cancel btn-lg">Cancel</button>
+            <a href="/mentor/mycourse" class="btn cancel btn-lg">Cancel</a>
         </div>
+        <br>
+        <br>
+        <br>
     </form>
 @endsection

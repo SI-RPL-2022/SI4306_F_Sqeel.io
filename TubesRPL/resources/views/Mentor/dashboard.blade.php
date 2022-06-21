@@ -47,11 +47,12 @@
 
         <h4 class="analytic fw-bold">Analytics</h4>
         <div class="d-flex mb-5">
-            <div class="border rounded p-5 ms-3" style="width: 60%;background: white;">
+            <div class="border rounded shadow p-5 ms-3" style="width: 60%;background: white;">
                 <b>My Course Enrolment</b>
                 <canvas id="myChart" style=""></canvas>
             </div>
             <div class="border rounded p-5 shadow ms-4" style="background: white;">
+                <b>Perbandingan course dilihat dan dienroll</b>
                 <canvas style="width:75%;height:20rem" id="myChart2"></canvas>
             </div>
         </div>
@@ -69,6 +70,15 @@
                 data: count,
             }]
         };
+        const data2 = {
+            labels: ["Course dilihat", "Course dienroll"],
+            datasets: [{
+                label: 'Perbandingan course clicked dan Enrolled',
+                backgroundColor: ['#B48BF0', 'rgb(255, 99, 132)'],
+                // borderColor: 'rgb(255, 99, 132)',
+                data: [<?php echo $click; ?>, <?php echo $enroll; ?>],
+            }]
+        };
 
         const config = {
             type: 'bar',
@@ -77,7 +87,7 @@
         };
         const config2 = {
             type: 'doughnut',
-            data: data,
+            data: data2,
             options: {}
         };
     </script>

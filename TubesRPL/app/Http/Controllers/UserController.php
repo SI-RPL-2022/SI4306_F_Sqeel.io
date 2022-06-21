@@ -35,12 +35,14 @@ class UserController extends Controller
         $videos = 0;
         $enroll = 0;
         $review = 0;
+        $click = 0;
         foreach ($playlist as $list) {
             $data[] = $list->judul;
             $count[] = count($list->enroll);
             $videos += count($list->video);
             $enroll += count($list->enroll);
             $review += count($list->review);
+            $click += $list->click;
         }
         // dd($videos, $enroll, count($playlist), $review);
         return view('Mentor.dashboard', [
@@ -50,7 +52,8 @@ class UserController extends Controller
             'enroll' => $enroll,
             'review' => $review,
             'label2' => json_encode($data),
-            'count' => json_encode($count)
+            'count' => json_encode($count),
+            'click' => $click,
         ]);
     }
 

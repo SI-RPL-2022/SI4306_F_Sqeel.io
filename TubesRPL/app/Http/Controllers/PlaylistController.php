@@ -90,7 +90,11 @@ class PlaylistController extends Controller
             ->where('playlist_id', '=', $playlist->id)
             ->where('user_id', '=', auth()->user()->id)
             ->exists();
-
+        if ($enroll == false) {
+            $click = $playlist->click;
+            $click += 1;
+            $playlist->update(['click' => $click]);
+        }
         $review = DB::table('reviews')
             ->where('playlist_id', $playlist->id)
             ->join('users', 'users.id', '=', 'user_id')
@@ -162,6 +166,7 @@ class PlaylistController extends Controller
     public function destroy(playlist $playlist)
     {
         Enroll::where('playlist_id', $playlist->id)->delete();
+        review::where('playlist_id', $playlist->id)->delete();
         transaksi::where('playlist_id', $playlist->id)->delete();
         video::where('playlist_id', $playlist->id)->delete();
         $playlist->delete();

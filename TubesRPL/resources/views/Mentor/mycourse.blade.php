@@ -12,74 +12,32 @@
     </div>
     <center>
         <div class="row">
-            @foreach ($playlist as $item)
-                <div class="col-md-4 course mb-3">
-                    <div class="card p-2" style="width: 15rem; height:20rem;">
-                        <img class="card-img-top" src="/storage/thumbnail/{{ $item->thumbnail }}" alt="">
-                        <a href="/edit/materi/{{ $item->judul }}" class="btn b-editcourse"><i
-                                class="fa-regular fa-pen-to-square"></i></a>
-                        <form action="/playlist/{{ $item->id }}" method="post">
-                            @method('delete')
-                            @csrf
-                            <button class="btn b-deletecourse" type="submit"><i
-                                    class="fa-regular fa-trash-can"></i></button>
-                        </form>
-                        <div class="card-body">
-                            <a class="nav-link" href="/video/{{ $item->video[0]->idvideo }}">{{ $item->judul }}</a>
+            @if (count($playlist) == 0)
+                <h1 class="mt-5">You dont have course yet</h1>
+            @else
+                @foreach ($playlist as $item)
+                    <div class="col-md-4 course mb-3">
+                        <div class="card p-2" style="width: 15rem; height:17rem;">
+                            <center>
+                                <img class="card-img-top" src="/storage/thumbnail/{{ $item->thumbnail }}" alt=""
+                                    style="width:10rem;height:10rem">
+                            </center>
+                            <a href="/edit/materi/{{ $item->judul }}" class="btn b-editcourse"><i
+                                    class="fa-regular fa-pen-to-square"></i></a>
+                            <form action="/playlist/{{ $item->id }}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button class="btn b-deletecourse" type="submit"><i
+                                        class="fa-regular fa-trash-can"></i></button>
+                            </form>
+                            <div class="card-body">
+                                <a class="nav-link" href="/video/{{ $item->video[0]->idvideo }}">{{ $item->judul }}</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-            <div class="col-md-4 course">
-                <div class="card p-2" style="width: 14rem; height:20rem;">
-                    <img class="card-img-top" src="\images\bg2.jpg" alt="">
-                    <a href="" class="btn b-editcourse"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <button class="btn b-deletecourse"><i class="fa-regular fa-trash-can"></i></button>
-                    <div class="card-body">
-                        <p>{{ $item->judul }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 course">
-                <div class="card p-2" style="width: 14rem; height:20rem;">
-                    <img class="card-img-top" src="\images\bg2.jpg" alt="">
-                    <a href="" class="btn b-editcourse"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <button class="btn b-deletecourse"><i class="fa-regular fa-trash-can"></i></button>
-                    <div class="card-body">
-                        <p>{{ $item->judul }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 course">
-                <div class="card p-2" style="width: 14rem; height:20rem;">
-                    <img class="card-img-top" src="\images\bg2.jpg" alt="">
-                    <a href="" class="btn b-editcourse"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <button class="btn b-deletecourse"><i class="fa-regular fa-trash-can"></i></button>
-                    <div class="card-body">
-                        <p>{{ $item->judul }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 course">
-                <div class="card p-2" style="width: 14rem; height:20rem;">
-                    <img class="card-img-top" src="\images\bg2.jpg" alt="">
-                    <a href="" class="btn b-editcourse"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <button class="btn b-deletecourse"><i class="fa-regular fa-trash-can"></i></button>
-                    <div class="card-body">
-                        <p>{{ $item->judul }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 course">
-                <div class="card p-2" style="width: 14rem; height:20rem;">
-                    <img class="card-img-top" src="\images\bg2.jpg" alt="">
-                    <a href="" class="btn b-editcourse"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <button class="btn b-deletecourse"><i class="fa-regular fa-trash-can"></i></button>
-                    <div class="card-body">
-                        <p>{{ $item->judul }}</p>
-                    </div>
-                </div>
-            </div>
+                @endforeach
+            @endif
+
         </div>
     </center>
 @endsection
