@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreplaylistRequest;
 use App\Http\Requests\UpdateplaylistRequest;
 use App\Models\review;
+use App\Models\transaksi;
+use App\Models\video;
 use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
@@ -158,7 +160,10 @@ class PlaylistController extends Controller
      */
     public function destroy(playlist $playlist)
     {
-        //
+        transaksi::where('playlist_id', $playlist->id)->delete();
+        video::where('playlist_id', $playlist->id)->delete();
+        $playlist->delete();
+        return redirect('/mentor/mycourse/');
     }
 
 

@@ -22,7 +22,7 @@ class MentorDashboardController extends Controller
     {
         $user =  auth()->user();
         $list = $user->playlist;
-        return view('Mentor.video', [
+        return view('Mentor.videos', [
             'title' => 'Sqeel.io | My Videos',
             'list' => $list,
         ]);
@@ -31,7 +31,7 @@ class MentorDashboardController extends Controller
     {
         $user =  auth()->user();
         $list = $user->playlist;
-        return view('Mentor.video', [
+        return view('Mentor.videos', [
             'title' => 'Sqeel.io | My Videos',
             'list' => $list,
             'playlist' => $playlist,

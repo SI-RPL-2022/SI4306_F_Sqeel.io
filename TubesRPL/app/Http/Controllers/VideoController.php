@@ -117,7 +117,10 @@ class VideoController extends Controller
      */
     public function edit(video $video)
     {
-        //
+        return view('Mentor.editvideo', [
+            'title' => 'Sqeel.io | Edit Video',
+            'video' => $video
+        ]);
     }
 
     /**
@@ -127,9 +130,16 @@ class VideoController extends Controller
      * @param  \App\Models\video  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatevideoRequest $request, video $video)
+    public function update(Request $request, video $video)
     {
-        //
+        $data = [
+            'idvideo' => $request['idvideo'],
+            'judulVideo' => $request['judulVideo'],
+            'deskripsi' => $request['deskripsi']
+        ];
+        video::where('id', $video->id)
+            ->update($data);
+        return redirect('/mentor/myvideos/' . $video->playlist->judul);
     }
 
     /**
@@ -140,6 +150,8 @@ class VideoController extends Controller
      */
     public function destroy(video $video)
     {
-        //
+        transaksi::where('video_id', $video->id)->delete();
+        $video->delete();
+        return redirect('/mentor/myvideos/' . $video->playlist->judul);
     }
 }

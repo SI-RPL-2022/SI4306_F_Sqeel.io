@@ -18,9 +18,14 @@
                         <img class="card-img-top" src="/storage/thumbnail/{{ $item->thumbnail }}" alt="">
                         <a href="/edit/materi/{{ $item->judul }}" class="btn b-editcourse"><i
                                 class="fa-regular fa-pen-to-square"></i></a>
-                        <button class="btn b-deletecourse"><i class="fa-regular fa-trash-can"></i></button>
+                        <form action="/playlist/{{ $item->id }}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button class="btn b-deletecourse" type="submit"><i
+                                    class="fa-regular fa-trash-can"></i></button>
+                        </form>
                         <div class="card-body">
-                            <a href="/video/{{ $item->video[0]->idvideo }}">{{ $item->judul }}</a>
+                            <a class="nav-link" href="/video/{{ $item->video[0]->idvideo }}">{{ $item->judul }}</a>
                         </div>
                     </div>
                 </div>

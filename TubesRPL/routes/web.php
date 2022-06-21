@@ -53,9 +53,9 @@ Route::get('/search', [PlaylistController::class, 'search']);
 Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::get('/mentor/index', [UserController::class, 'indexMentor']);
     Route::get('/mentor/mycourse', [MentorDashboardController::class, 'mycourses']);
-    Route::get('/mentor/myreviews/', [MentorDashboardController::class, 'myreviewsindex']);
+    Route::get('/mentor/myreview/', [MentorDashboardController::class, 'myreviewsindex']);
     Route::get('/mentor/myreviews/{playlist:judul}', [MentorDashboardController::class, 'myreviews']);
-    Route::get('/mentor/myvideos/', [MentorDashboardController::class, 'myvideosindex']);
+    Route::get('/mentor/myvideo/', [MentorDashboardController::class, 'myvideosindex']);
     Route::get('/mentor/myvideos/{playlist:judul}', [MentorDashboardController::class, 'myvideos']);
     Route::get('/create/materi', [PlaylistController::class, 'create']);
     Route::get('/edit/materi/{playlist:judul}', [PlaylistController::class, 'edit']);
@@ -63,13 +63,18 @@ Route::middleware(['auth', 'CekRole:2'])->group(function () {
     Route::post('/create/materi', [PlaylistController::class, 'simpan']);
     Route::post('/create/video', [VideoController::class, 'simpan']);
     Route::get('/create/{playlist:judul}/video', [VideoController::class, 'create']);
+    Route::get('/video/{video:idvideo}/edit', [VideoController::class, 'edit']);
+    Route::get('/video/{video:idvideo}/delete', [VideoController::class, 'destroy']);
+    Route::post('/video/{video:idvideo}/edit', [VideoController::class, 'update']);
+    Route::get('/review/{review:id}/delete', [ReviewController::class, 'destroy']);
+    Route::delete('/playlist/{playlist:id}', [PlaylistController::class, 'destroy']);
 });
 
-Route::get('/cobaridho', function () {
-    return view('Mentor.', [
-        'title' => 'My Videos'
-    ]);
-});
+// Route::get('/cobaridho', function () {
+//     return view('Mentor.', [
+//         'title' => 'My Videos'
+//     ]);
+// });
 
 Route::get('/review', function () {
     return view('Mentor.review', [

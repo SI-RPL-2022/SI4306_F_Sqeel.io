@@ -1,59 +1,61 @@
 @extends('layout.mentor')
 {{-- @dd($data, $count) --}}
 @section('content')
-    <center>
-        <h1 class="mb-5">Dashboard</h1>
-        <div class="row">
-            <div class="col">
-                <div class="card pt-4 ps-4 shadow d-flex flex-row" style="width: 15rem; height:6.2rem;">
-                    <i class="d-icon fa-solid fa-book me-3"></i>
-                    <h5><b>Courses</b><br>
-                        <p>{{ count($playlist) }}</p>
-                    </h5>
+    <div class="container">
+        <center>
+            <h1 class="mb-5 fw-bold">Dashboard</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="card pt-4 ps-4 shadow d-flex flex-row" style="width: 15rem; height:6.2rem;">
+                        <i class="d-icon fa-solid fa-book me-3"></i>
+                        <h5><b>Courses</b><br>
+                            <p>{{ count($playlist) }}</p>
+                        </h5>
 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pt-4 ps-4 shadow d-flex flex-row" style="width: 15rem; height:6.2rem;">
+                        <i class="d-icon fa-solid fa-photo-film me-3"></i>
+                        <h5><b>Videos</b><br>
+                            <p>{{ $videos }}</p>
+                        </h5>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pt-4 ps-4 shadow d-flex flex-row" style="width: 15rem; height:6.2rem;">
+                        <i class="d-icon fa-solid fa-user-check me-3"></i>
+                        <h5><b>Enrollments</b><br>
+                            <p>{{ $enroll }}</p>
+                        </h5>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pt-4 ps-4 shadow d-flex flex-row" style="width: 15rem; height:6.2rem;">
+                        <i class="d-icon fa-solid fa-comments me-3"></i>
+                        <h5><b>Reviews</b><br>
+                            <p>{{ $review }}</p>
+                        </h5>
+
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card pt-4 ps-4 shadow d-flex flex-row" style="width: 15rem; height:6.2rem;">
-                    <i class="d-icon fa-solid fa-photo-film me-3"></i>
-                    <h5><b>Videos</b><br>
-                        <p>{{ $videos }}</p>
-                    </h5>
+        </center>
 
-                </div>
+
+        <h4 class="analytic fw-bold">Analytics</h4>
+        <div class="d-flex mb-5">
+            <div class="border rounded p-5 ms-3" style="width: 60%;background: white;">
+                <b>My Course Enrolment</b>
+                <canvas id="myChart" style=""></canvas>
             </div>
-            <div class="col">
-                <div class="card pt-4 ps-4 shadow d-flex flex-row" style="width: 15rem; height:6.2rem;">
-                    <i class="d-icon fa-solid fa-user-check me-3"></i>
-                    <h5><b>Enrollments</b><br>
-                        <p>{{ $enroll }}</p>
-                    </h5>
-
-                </div>
+            <div class="border rounded p-5 shadow ms-4" style="background: white;">
+                <canvas style="width:75%;height:20rem" id="myChart2"></canvas>
             </div>
-            <div class="col">
-                <div class="card pt-4 ps-4 shadow d-flex flex-row" style="width: 15rem; height:6.2rem;">
-                    <i class="d-icon fa-solid fa-comments me-3"></i>
-                    <h5><b>Reviews</b><br>
-                        <p>{{ $review }}</p>
-                    </h5>
-
-                </div>
-            </div>
-        </div>
-    </center>
-
-    <h4 class="analytic fw-bold">Analytics</h4>
-    <div class="d-flex mb-5" style="width: 100%">
-        <div class="border rounded p-5 ms-3 shadow w-75" style="background: white;">
-            <b>My Course Enrolment</b>
-            <canvas id="myChart"></canvas>
-        </div>
-        <div class="border rounded p-5 shadow ms-4" style="background: white;">
-            <canvas id="myChart2"></canvas>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         var label = <?php echo $label2; ?>;
