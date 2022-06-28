@@ -1,6 +1,6 @@
 @extends('layout.mentor')
 @section('content')
-    <form class="" action="/edit/materi/{{ $playlist->judul }}" method="POST" enctype="multipart/form-data">
+    <form class="mb-5 mt-3" action="/edit/materi/{{ $playlist->judul }}" method="POST" enctype="multipart/form-data">
         @csrf
         <h3 class="mb-5" style="font-weight: bold">Edit Course</h3>
         <div class="mb-3 mt-4 row">
@@ -27,8 +27,7 @@
             <Label class="mb-3 text-muted">Description</Label>
             <div class="col">
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="deskripsi" name="deskripsi"
-                        style="height: 100px">{{ $playlist->deskripsi }}</textarea>
+                    <textarea class="form-control" placeholder="Leave a comment here" id="deskripsi" name="deskripsi" style="height: 100px">{{ $playlist->deskripsi }}</textarea>
                     <label for="deskripsi" class="text-muted">Enter course description...</label>
                 </div>
             </div>
@@ -41,7 +40,7 @@
         </div>
         <input type="text" value="{{ auth()->user()->id }}" name="user_id" id="user_id" hidden>
         <hr>
-        <div class="d-grid gap-3 d-md-block" style="margin-bottom: 5rem;">
+        <div class="d-grid gap-3 d-md-block mt-5" style="margin-bottom: 5rem;">
             <button type="submit" class="btn create btn-lg">Update</button>
             <button type="button" class="btn cancel btn-lg">Cancel</button>
         </div>

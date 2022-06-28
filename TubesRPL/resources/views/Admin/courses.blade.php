@@ -2,8 +2,8 @@
 {{-- @dd($data, $count) --}}
 @section('content')
     <center>
-        <h1>Users</h1>
-        <p class="lib-subtittle">All registred users</p>
+        <h1>Courses</h1>
+        <p class="lib-subtittle">All Created Course</p>
     </center>
 
     <center>
@@ -14,10 +14,10 @@
                     <thead style="background-color: #6c79e0;color:white;">
                         <tr>
                             <th scope="col" style="border-top-left-radius:10px;">No</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">email</th>
-                            <th scope="col">role</th>
-                            <th scope="col">bio</th>
+                            <th scope="col">Judul</th>
+                            <th scope="col">Creator</th>
+                            <th scope="col">deskripsi</th>
+                            <th scope="col">enrollment</th>
                             <th scope="col"style="border-top-right-radius:10px">Action</th>
                         </tr>
                     </thead>
@@ -25,26 +25,22 @@
                         @php
                             $a = 0;
                         @endphp
-                        @if (count($users) == 0)
+                        @if (count($courses) == 0)
                             <tr>
-                                <td>
-                                    <h1 class="mt-5 text-center">There is no user yet</h1>
+                                <td colspan="6">
+                                    <h1 class="mt-5 text-center">There is no Course yet</h1>
                                 </td>
                             </tr>
                         @else
-                            @foreach ($users as $user)
+                            @foreach ($courses as $item)
                                 <tr>
                                     <td>{{ $a += 1 }}</td>
-                                    <td>{{ $user->nama }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->role->namaRole }}</td>
-                                    <td>{{ $user->bio }}</td>
+                                    <td>{{ $item->judul }}</td>
+                                    <td>{{ $item->user->nama }}</td>
+                                    <td>{{ $item->deskripsi }}</td>
+                                    <td>{{ $item->enrollment }}</td>
                                     <td>
-                                        <form action="/user/{{ $user->id }}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger" type="submit">Delete</button>
-                                        </form>
+                                        <a href="/playlist/{{ $item->id }}/delete" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

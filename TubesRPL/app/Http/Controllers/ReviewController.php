@@ -86,8 +86,10 @@ class ReviewController extends Controller
      */
     public function destroy(review $review)
     {
-        // dd('test');
-        $review->delete();
-        return redirect('/mentor/myreviews/' . $review->playlist->judul);
+        if (auth()->user()->id == $review->user_id) {
+            $review->delete();
+            return redirect('/mentor/myreviews/' . $review->playlist->judul);
+        }
+        return redirect()->back();
     }
 }

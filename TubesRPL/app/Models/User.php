@@ -49,4 +49,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(role::class);
     }
+    public function request()
+    {
+        return $this->hasOne(Request::class);
+    }
 }

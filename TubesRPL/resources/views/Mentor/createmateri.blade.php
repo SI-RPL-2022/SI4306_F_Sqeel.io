@@ -1,7 +1,7 @@
 @extends('layout.mentor')
 
 @section('content')
-    <form class="" action="/create/materi" method="POST" enctype="multipart/form-data">
+    <form class="mb-5" action="/create/materi" method="POST" enctype="multipart/form-data">
         @csrf
         <h3 class="mb-5" style="font-weight: bold">Create New Course</h3>
         <div class="mb-3 mt-4 row">

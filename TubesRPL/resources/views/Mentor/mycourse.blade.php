@@ -31,7 +31,13 @@
                                         class="fa-regular fa-trash-can"></i></button>
                             </form>
                             <div class="card-body">
-                                <a class="nav-link" href="/video/{{ $item->video[0]->idvideo }}">{{ $item->judul }}</a>
+                                @if (isset($item->video[0]))
+                                    <a class="nav-link"
+                                        href="/video/{{ $item->video[0]->idvideo }}">{{ $item->judul }}</a>
+                                @else
+                                    <a href="" class="nav-link">{{ $item->judul }}</a>
+                                @endif
+
                             </div>
                         </div>
                     </div>

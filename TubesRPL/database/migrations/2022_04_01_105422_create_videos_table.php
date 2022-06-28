@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('idvideo')->unique();
             $table->timestamps();
-            $table->foreignId("playlist_id");
+            $table->foreignId("playlist_id")->constrained()->onDelete('cascade');
             $table->string("judulVideo");
             $table->string('deskripsi');
         });

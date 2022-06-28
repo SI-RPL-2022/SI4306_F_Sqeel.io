@@ -75,7 +75,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
         if (Auth::attempt($credentials) && $user->role_id == "3") {
-            return redirect()->intended('/admin/dashboard');
+            return redirect()->intended('/admin/users');
         }
         return redirect('/admin')->withErrors(['msg' => 'Email atau Password salah']);
     }

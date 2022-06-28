@@ -41,7 +41,7 @@
                 </li>
             </center>
             <li class="nav-item">
-                <a href="/mentor/index"
+                <a href="/admin/dashboard"
                     class="nav-link link-dark {{ $title == 'Sqeel.io | Mentor Dashboard' ? 'active' : '' }}"
                     aria-current="page">
                     <i class="fa-solid fa-chart-line me-2" width="16" height="16">
@@ -50,31 +50,31 @@
                 </a>
             </li>
             <li>
-                <a href="/mentor/mycourse"
-                    class="nav-link link-dark {{ $title == 'Sqeel.io | My Courses' || $title == 'Sqeel.io | Edit Courses' ? 'active' : '' }}">
+                <a href="/admin/courses"
+                    class="nav-link link-dark {{ $title == 'Sqeel.io | All Courses' || $title == 'Sqeel.io | Edit Courses' ? 'active' : '' }}">
                     <i class="fa-solid fa-book me-2" width="16" height="16">
                     </i>
                     All Courses
                 </a>
             </li>
             <li>
-                <a href="/mentor/myvideo"
-                    class="nav-link link-dark {{ $title == 'Sqeel.io | My Videos' ? 'active' : '' }}">
+                <a href="/admin/videos"
+                    class="nav-link link-dark {{ $title == 'Sqeel.io | All Videos' ? 'active' : '' }}">
                     <i class="fa-solid fa-video me-2" width="16" height="16">
                     </i>
                     All Videos
                 </a>
             </li>
             <li>
-                <a href="/mentor/myreview"
-                    class="nav-link link-dark {{ $title == 'Sqeel.io | My Reviews' ? 'active' : '' }}">
+                <a href="/admin/requests"
+                    class="nav-link link-dark {{ $title == 'Sqeel.io | Mentor Request' ? 'active' : '' }}">
                     <i class="fa-solid fa-list-check me-2" width="16" height="16"></i>
                     Mentor Request
                 </a>
             </li>
             <li>
-                <a href="/profile/{{ auth()->user()->id }}"
-                    class="nav-link link-dark {{ $title == 'Sqeel.io | Edit Profile' ? 'active' : '' }}">
+                <a href="/admin/users"
+                    class="nav-link link-dark {{ $title == 'Sqeel.io | All Users' ? 'active' : '' }}">
                     <i class="fa-solid fa-user me-2" width="16" height="16">
                     </i>
                     All Users

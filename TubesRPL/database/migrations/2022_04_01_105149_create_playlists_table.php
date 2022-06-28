@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string("judul");
             $table->string("thumbnail");
-            $table->foreignId("user_id");
-            $table->foreignId("kategori_id");
+            $table->foreignId("user_id")->constrained()->onDelete('cascade');
+            $table->foreignId("kategori_id")->constrained()->onDelete('cascade');
             $table->longtext('deskripsi');
             $table->integer('enrollment')->default(0);
             $table->integer('click')->default(0);

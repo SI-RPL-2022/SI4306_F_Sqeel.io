@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('replies', function (Blueprint $table) {
+        Schema::create('requests', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->longText("isi");
-            $table->foreignId("komentar_id")->constrained()->onDelete('cascade');
             $table->foreignId("user_id")->constrained()->onDelete('cascade');
+            $table->string('cv')->nullable();
+            $table->string('pi')->nullable();
+            $table->string('status')->default('waiting');
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('replies');
+        Schema::dropIfExists('requests');
     }
 };

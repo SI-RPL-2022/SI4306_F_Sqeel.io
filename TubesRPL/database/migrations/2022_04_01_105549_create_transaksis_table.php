@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("video_id");
-            $table->foreignId("user_id");
-            $table->foreignId("playlist_id");
+            $table->foreignId("video_id")->constrained()->onDelete('cascade');
+            $table->foreignId("user_id")->constrained()->onDelete('cascade');
+            $table->foreignId("playlist_id")->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

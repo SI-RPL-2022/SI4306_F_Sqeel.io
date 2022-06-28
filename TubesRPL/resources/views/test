@@ -105,9 +105,10 @@ video::create([
 
 playlist::create([
     'judul'=> 'Belajar Boostrap',
-    'user_id' => 1,
+    'user_id' => 4,
     'kategori_id'=>1,
-    'deskripsi' => 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et'
+    'deskripsi' => 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et',
+    'thumbnail' => 'boostrap.jpg'
 ])
 
 

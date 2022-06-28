@@ -18,7 +18,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('role_id');
+            $table->integer('role_id')->constrained()->onDelete('cascade');
             $table->integer("path_id")->nullable();
             $table->string('password');
             $table->string('profile')->nullable();

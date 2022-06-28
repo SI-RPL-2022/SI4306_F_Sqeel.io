@@ -150,8 +150,14 @@ class VideoController extends Controller
      */
     public function destroy(video $video)
     {
-        transaksi::where('video_id', $video->id)->delete();
-        $video->delete();
-        return redirect('/mentor/myvideos/' . $video->playlist->judul);
+        if (auth()->user()->id == $video->playlist->user_id or auth()->user()->role_id == 3) {
+            $video->delete();
+            if (auth()->user()->role_id == 2) {
+                return redirect('/mentor/myvideos/' . $video->playlist->judul);
+            } else {
+                return redirect('/admin/videos/');
+            }
+        }
+        return redirect()->back();
     }
 }

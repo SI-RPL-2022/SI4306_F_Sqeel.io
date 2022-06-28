@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Request as ModelsRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\role;
@@ -64,7 +65,7 @@ class RegisterController extends Controller
             }
         }
 
-        if ($request['email'])
+        if ($request['role_id'] == 1) {
 
             $validated = $request->validate([
                 'nama' => 'required|max:255',
@@ -73,10 +74,24 @@ class RegisterController extends Controller
                 'password' => 'required|confirmed',
             ]);
 
-        $validated['password'] = Hash::make($validated['password']);
+            $validated['password'] = Hash::make($validated['password']);
 
-        User::create($validated);
-        return redirect('/login')->with('msg', 'Register Success');
+            User::create($validated);
+            return redirect('/login')->with('msg', 'Register Success');
+        } else {
+            $validated = $request->validate([
+                'nama' => 'required|max:255',
+                'role_id' => 'required',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|confirmed',
+            ]);
+
+            $validated['password'] = Hash::make($validated['password']);
+            $create = User::create($validated);
+            $data = ['user_id' => $create['id']];
+            ModelsRequest::create($data);
+            return redirect('/login')->with('msg', 'Register Success');
+        }
     }
 
     /**

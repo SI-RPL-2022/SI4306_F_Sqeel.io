@@ -132,7 +132,11 @@ class UserController extends Controller
         User::where('id', $id)
             ->update($data);
 
-        return redirect('/');
+        if (auth()->user->role_id == 2) {
+            return redirect('/mentor/dashboard');
+        } else {
+            return redirect('/');
+        }
     }
 
     /**
@@ -143,6 +147,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (auth()->user()->role_id == 3) {
+            $user = user::find($id);
+            $user->delete();
+            return redirect('/admin/users/');
+        }
+        return redirect()->back();
     }
 }

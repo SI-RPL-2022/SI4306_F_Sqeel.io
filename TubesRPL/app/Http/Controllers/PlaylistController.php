@@ -165,24 +165,31 @@ class PlaylistController extends Controller
      */
     public function destroy(playlist $playlist)
     {
-        Enroll::where('playlist_id', $playlist->id)->delete();
-        review::where('playlist_id', $playlist->id)->delete();
-        transaksi::where('playlist_id', $playlist->id)->delete();
-        video::where('playlist_id', $playlist->id)->delete();
-        $playlist->delete();
-        return redirect('/mentor/mycourse/');
+        if (auth()->user()->user_id == $playlist->user_id or auth()->user()->role_id == 3) {
+            $playlist->delete();
+            if (auth()->user()->role_id == 2) {
+                return redirect('/mentor/mycourse/');
+            } else {
+                return redirect('/admin/courses/');
+            }
+        }
+        return redirect()->back();
     }
 
 
 
     public function search(Request $request)
     {
-        if (isset($request->mentor)) {
-
+        if (isset($request->min)) {
+            $min = $request->min;
+            $max = $request->max;
+            if ($min > $max) {
+                return redirect()->back()->with(['msg' => 'max harus lebih kecil dari min']);
+            }
             $playlists = DB::table('playlists')
                 ->join('users', 'playlists.user_id', '=', 'users.id')
+                ->whereBetween('enrollment', [$min, $max])
                 ->where('judul', 'like', '%' . $request->key . '%')
-                ->where('nama', 'like', '%' . $request->mentor . '%')
                 ->get();
             return view('Student.search', [
                 'title' => 'Search Materi: ' . $request->key,

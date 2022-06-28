@@ -4,6 +4,11 @@
         <center>
             <h1>{{ $kategori->namaKategori }}</h1>
             <p class="lib-subtittle">Browse our entire {{ $kategori->namaKategori }} courses collection</p>
+            @if (session()->has('msg'))
+                <div class="alert alert-danger">
+                    {{ session()->get('msg') }}
+                </div>
+            @endif
         </center>
     </div>
     <div class="container">
@@ -20,14 +25,20 @@
                 <div class="container">
                     <ul class="filter">
                         <hr>
-                        <li class="filter-item">Mentor</li>
+                        <li class="filter-item">Jumlah Enroll</li>
                         <div id="Mentor-filter">
                             <li class="collapse-li">
+
                                 <form action="/library/{{ $kategori->namaKategori }}">
+                                    <label for="min" class="ms-1">min</label>
+                                    <label for="max" style="margin-left: 4.2rem">max</label>
                                     <div class="input-group input-group-sm mb-3">
-                                        <input placeholder="Nama Mentor..." type="text" class="form-control"
+                                        <input placeholder="min" type="number" class="form-control"
                                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                                            name="mentor">
+                                            name="min" min="0" id="min" value="0">
+                                        <input placeholder="max" type="number" class="form-control"
+                                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                                            name="max" min="1" id="max" value="1">
                                         <span class="input-group-text" id="inputGroup-sizing-sm"><button class="border-0"
                                                 type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></span>
                                     </div>

@@ -54,13 +54,18 @@ class KategoriController extends Controller
      */
     public function show(Kategori $kategori, Request $request)
     {
-        if (isset($request->mentor)) {
+        if (isset($request->max)) {
 
+            $min = $request->min;
+            $max = $request->max;
+            if ($min > $max) {
+                return redirect()->back()->with(['msg' => 'max harus lebih kecil dari min']);
+            }
             $playlists = DB::table('playlists')
                 ->join('users', 'playlists.user_id', '=', 'users.id')
-                ->where('kategori_id', '=', $kategori->id)
-                ->where('nama', 'like', '%' . $request->mentor . '%')
+                ->whereBetween('enrollment', [$min, $max])
                 ->get();
+
             return view('Student.kategori', [
                 'title' => $kategori->namaKategori,
                 'kategori' => $kategori,
