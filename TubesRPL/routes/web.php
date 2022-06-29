@@ -88,6 +88,7 @@ Route::middleware(['auth', 'CekRole:2,3'])->group(function () {
 
 Route::middleware(['auth', 'CekRole:3'])->group(function () {
     Route::get('/admin/users', [AdminDashboardController::class, 'users']);
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'dashboard']);
     Route::get('/admin/courses', [AdminDashboardController::class, 'courses']);
     Route::get('/admin/videos', [AdminDashboardController::class, 'videos']);
     Route::get('/admin/requests', [AdminDashboardController::class, 'requests']);

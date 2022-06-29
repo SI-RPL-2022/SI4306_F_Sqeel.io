@@ -42,7 +42,7 @@
             </center>
             <li class="nav-item">
                 <a href="/admin/dashboard"
-                    class="nav-link link-dark {{ $title == 'Sqeel.io | Mentor Dashboard' ? 'active' : '' }}"
+                    class="nav-link link-dark {{ $title == 'Sqeel.io | Admin Dashboard' ? 'active' : '' }}"
                     aria-current="page">
                     <i class="fa-solid fa-chart-line me-2" width="16" height="16">
                     </i>

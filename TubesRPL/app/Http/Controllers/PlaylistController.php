@@ -182,13 +182,13 @@ class PlaylistController extends Controller
     {
         if (isset($request->min)) {
             $min = $request->min;
-            $max = $request->max;
-            if ($min > $max) {
-                return redirect()->back()->with(['msg' => 'max harus lebih kecil dari min']);
-            }
+            // $max = $request->max;
+            // if ($min > $max) {
+            //     return redirect()->back()->with(['msg' => 'max harus lebih kecil dari min']);
+            // }
             $playlists = DB::table('playlists')
                 ->join('users', 'playlists.user_id', '=', 'users.id')
-                ->whereBetween('enrollment', [$min, $max])
+                ->where('enrollment', '>=', $min)
                 ->where('judul', 'like', '%' . $request->key . '%')
                 ->get();
             return view('Student.search', [

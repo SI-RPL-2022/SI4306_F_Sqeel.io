@@ -20,15 +20,15 @@
                         <li class="collapse-li">
                             <form action="/search" method="GET">
                                 <label for="min" class="ms-1">min</label>
-                                <label for="max" style="margin-left: 4.2rem">max</label>
+                                {{-- <label for="max" style="margin-left: 4.2rem">max</label> --}}
                                 <input type="text" name="key" value="{{ $key }}" hidden>
                                 <div class="input-group input-group-sm mb-3">
                                     <input placeholder="min" type="number" class="form-control"
                                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
                                         name="min" min="0" id="min" value="0">
-                                    <input placeholder="max" type="number" class="form-control"
+                                    {{-- <input placeholder="max" type="number" class="form-control"
                                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                                        name="max" min="1" id="max" value="1">
+                                        name="max" min="1" id="max" value="1"> --}}
                                     <span class="input-group-text" id="inputGroup-sizing-sm"><button class="border-0"
                                             type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></span>
                                 </div>
@@ -47,7 +47,7 @@
                             <div class="col">
                                 <a href="/materi/{{ $playlist->judul }}" class="kategori">
                                     <div class="card border" id="web">
-                                        <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-3"
+                                        <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-5"
                                             alt="..." style="width: 15.5rem; height: 15rem">
                                         <div class="card-body text-center">
                                             <h5 class="card-title">{{ $playlist->judul }}</h5>

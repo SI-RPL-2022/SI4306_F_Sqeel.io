@@ -45,7 +45,6 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials) && $user->role_id == "1") {
 
-
             return redirect()->intended('/student/index');
         }
         return redirect('/login')->withErrors(['msg' => 'Email atau Password salah']);
@@ -75,7 +74,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
         if (Auth::attempt($credentials) && $user->role_id == "3") {
-            return redirect()->intended('/admin/users');
+            return redirect()->intended('/admin/dashboard');
         }
         return redirect('/admin')->withErrors(['msg' => 'Email atau Password salah']);
     }

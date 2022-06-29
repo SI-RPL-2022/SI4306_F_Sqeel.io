@@ -2,8 +2,8 @@
 {{-- @dd($data, $count) --}}
 @section('content')
     <center>
-        <h1>Users</h1>
-        <p class="lib-subtittle">All registred users</p>
+        <h1>Videos</h1>
+        <p class="lib-subtittle">All Videos by mentor</p>
     </center>
 
     <center>

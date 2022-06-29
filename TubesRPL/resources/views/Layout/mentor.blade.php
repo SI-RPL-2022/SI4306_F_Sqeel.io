@@ -84,7 +84,7 @@
         </ul>
         <a href="/logout" class="btn btn-danger">Logout</a>
     </div>
-    <div class="row" style="min-height: 100vh">
+    <div class="row" style="min-height: 110vh">
         <div class="col-2">
 
         </div>

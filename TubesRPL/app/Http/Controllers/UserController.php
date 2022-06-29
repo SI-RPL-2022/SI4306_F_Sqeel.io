@@ -123,7 +123,11 @@ class UserController extends Controller
             ];
             User::where('id', $id)
                 ->update($data);
-            return redirect('/');
+            if (auth()->user()->role_id == 2) {
+                return redirect('/mentor/index');
+            } else {
+                return redirect('/');
+            }
         }
         $data = [
             'nama' => $request->nama,
@@ -132,8 +136,8 @@ class UserController extends Controller
         User::where('id', $id)
             ->update($data);
 
-        if (auth()->user->role_id == 2) {
-            return redirect('/mentor/dashboard');
+        if (auth()->user()->role_id == 2) {
+            return redirect('/mentor/index');
         } else {
             return redirect('/');
         }
