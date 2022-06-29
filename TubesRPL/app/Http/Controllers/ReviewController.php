@@ -86,7 +86,7 @@ class ReviewController extends Controller
      */
     public function destroy(review $review)
     {
-        if (auth()->user()->id == $review->user_id) {
+        if (auth()->user()->id == $review->playlist->user->id) {
             $review->delete();
             return redirect('/mentor/myreviews/' . $review->playlist->judul);
         }

@@ -64,9 +64,9 @@ class AdminDashboardController extends Controller
 
     public function requests()
     {
-        $request = ModelsRequest::where('status', 'onreview')->get();
+        $request = ModelsRequest::wherein('status', ['onreview', 'waiting'])->get();
         return view('Admin.requests', [
-            'title' => 'Sqeel.io | All Request',
+            'title' => 'Sqeel.io | Mentor Request',
             'requests' => $request
         ]);
     }

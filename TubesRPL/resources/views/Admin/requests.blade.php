@@ -37,16 +37,31 @@
                                     <td>{{ $a += 1 }}</td>
                                     <td>{{ $request->user->nama }}</td>
                                     <td>{{ $request->user->email }}</td>
-                                    <td><a class="fs-5" href="/storage/cv/{{ $request->cv }}"><i
-                                                class="fa-solid fa-file-arrow-down"></i></a>
-                                    </td>
-                                    <td><a class="fs-5" href="/storage/cv/{{ $request->pi }}"><i
-                                                class="fa-solid fa-file-arrow-down"></i></a>
-                                    </td>
-                                    <td>
-                                        <a href="/request/accept/{{ $request->id }}"
-                                            class="btn btn-primary btn-sm">Accept</a>
-                                    </td>
+                                    @if ($request->status == 'waiting')
+                                        <td>
+                                            none
+                                        </td>
+                                        <td>
+                                            none
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-secondary btn-sm">
+                                                waiting
+                                            </a>
+                                        </td>
+                                    @else
+                                        <td><a class="fs-5" href="/storage/cv/{{ $request->cv }}"><i
+                                                    class="fa-solid fa-file-arrow-down"></i></a>
+                                        </td>
+                                        <td><a class="fs-5" href="/storage/cv/{{ $request->pi }}"><i
+                                                    class="fa-solid fa-file-arrow-down"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href="/request/accept/{{ $request->id }}"
+                                                class="btn btn-primary btn-sm">Accept</a>
+                                        </td>
+                                    @endif
+
                                 </tr>
                             @endforeach
                         @endif

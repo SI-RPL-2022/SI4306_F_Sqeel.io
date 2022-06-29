@@ -33,7 +33,15 @@
                             </form>
                         @else
                             <div class="d-grid gap-2">
-                                <a href="/video/{{ $playlist->video[0]->idvideo }}" class="btn btn enroll">View Course</a>
+                                @if (isset($playlist->video[0]))
+                                    <a href="/video/{{ $playlist->video[0]->idvideo }}" class="btn btn enroll">
+                                        View Course
+                                    </a>
+                                @else
+                                    <a href="" class="btn btn-secondary">
+                                        No Video yet
+                                    </a>
+                                @endif
                             </div>
                         @endif
 
