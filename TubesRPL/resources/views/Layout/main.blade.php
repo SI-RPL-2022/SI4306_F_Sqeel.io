@@ -60,10 +60,6 @@
                                 {{ auth()->user()->nama }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="dropdown-item"
-                                        href="/{{ strtolower(auth()->user()->role->namaRole) }}/index">User
-                                        Dashboard</a>
-                                </li>
                                 <li><a class="dropdown-item" href="/profile/{{ auth()->user()->id }}">Edit
                                         Profile</a></li>
                                 <li>

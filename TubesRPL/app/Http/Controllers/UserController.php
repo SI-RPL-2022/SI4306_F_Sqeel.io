@@ -97,6 +97,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        if (auth()->user()->id != $user->id) {
+            return redirect("/profile/" . auth()->user()->id);
+        }
         return view('Student.profile', [
             'title' => 'Sqeel.io | Edit Profile',
             'user' => $user

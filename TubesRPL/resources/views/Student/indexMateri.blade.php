@@ -52,7 +52,7 @@
         <hr class="mt-5" style="color: #b5b4be">
         <div class="row mt-5">
             <div class="col-7">
-                <h4 style="padding-bottom: 3px"><b>Course Reviews ()</b></h4>
+                <h4 style="padding-bottom: 3px"><b>Course Reviews ({{ count($review) }})</b></h4>
 
                 <div class="border rounded-3 " style="padding:2rem 0px; padding-right:0.7rem;padding-left:1rem">
                     @foreach ($review as $item)

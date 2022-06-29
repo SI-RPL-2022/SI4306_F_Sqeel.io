@@ -35,25 +35,25 @@
                                 <input class="form-check-input" type="radio" name="min" id="min0" value="0"
                                     checked>
                                 <label class="form-check-label" for="min0">
-                                    > 0
+                                    &ge; 0
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="min" id="min1" value="5">
                                 <label class="form-check-label" for="min1">
-                                    > 5
+                                    &ge; 5
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="min" id="min2" value="10">
                                 <label class="form-check-label" for="min2">
-                                    > 10
+                                    &ge; 10
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="min" id="min2" value="50">
                                 <label class="form-check-label" for="min2">
-                                    > 50
+                                    &ge; 50
                                 </label>
                             </div>
                         </li>
@@ -70,9 +70,9 @@
                 <center>
                     <div class="row row-cols-3" style="width: 80%">
                         @foreach ($playlists as $playlist)
-                            <div class="col">
+                            <div class="col mt-3">
                                 <a href="/materi/{{ $playlist->judul }}" class="kategori">
-                                    <div class="card border" id="web">
+                                    <div class="card border" style="max-height: 23rem" id="web">
                                         <img src="/storage/thumbnail/{{ $playlist->thumbnail }}" class="card-img-top p-5"
                                             alt="..." style="width: 15.5rem; height: 15rem">
                                         <div class="card-body text-center">

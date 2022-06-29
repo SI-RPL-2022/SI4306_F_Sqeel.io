@@ -17,7 +17,8 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton2">
                     @foreach ($list as $item)
-                        <li><a class="dropdown-item" href="/mentor/myreviews/{{ $item->judul }}">{{ $item->judul }}</a>
+                        <li><a class="dropdown-item" href="/mentor/myreviews/{{ $item->judul }}">{{ $item->judul }}
+                                ({{ count($item->review) }})</a>
                         </li>
                     @endforeach
                 </ul>

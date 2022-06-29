@@ -40,11 +40,15 @@
                                     <td>{{ $user->role->namaRole }}</td>
                                     <td>{{ $user->bio }}</td>
                                     <td>
-                                        <form action="/user/{{ $user->id }}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger" type="submit">Delete</button>
-                                        </form>
+                                        @if ($user->role_id == 3)
+                                            <button class="btn btn-secondary" disabled>Delete</button>
+                                        @else
+                                            <form action="/user/{{ $user->id }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger" type="submit">Delete</button>
+                                            </form>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
