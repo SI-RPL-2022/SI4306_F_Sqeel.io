@@ -188,6 +188,7 @@ class PlaylistController extends Controller
             // }
             $playlists = DB::table('playlists')
                 ->join('users', 'playlists.user_id', '=', 'users.id')
+                ->where('nama', 'like', '%' . $request->mentor . '%')
                 ->where('enrollment', '>=', $min)
                 ->where('judul', 'like', '%' . $request->key . '%')
                 ->get();

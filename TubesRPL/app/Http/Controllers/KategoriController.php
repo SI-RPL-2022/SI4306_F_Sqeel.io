@@ -57,12 +57,9 @@ class KategoriController extends Controller
         if (isset($request->min)) {
 
             $min = $request->min;
-
-            // if ($min > $max) {
-            //     return redirect()->back()->with(['msg' => 'max harus lebih kecil dari min']);
-            // }
             $playlists = DB::table('playlists')
                 ->join('users', 'playlists.user_id', '=', 'users.id')
+                ->where('nama', 'like', '%' . $request->mentor . '%')
                 ->where('enrollment', '>=', $min)
                 ->get();
 

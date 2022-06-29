@@ -25,28 +25,57 @@
                 <div class="container">
                     <ul class="filter">
                         <hr>
-                        <li class="filter-item">Jumlah Enroll</li>
-                        <div id="Mentor-filter">
-                            <li class="collapse-li">
+                        <form action="/library/{{ $kategori->namaKategori }}">
+                            <li class="filter-item">Nama Mentor</li>
+                            <div id="Mentor-filter">
+                                <li class="collapse-li">
 
-                                <form action="/library/{{ $kategori->namaKategori }}">
-                                    <label for="min" class="ms-1">min</label>
-                                    {{-- <label for="max" style="margin-left: 4.2rem">max</label> --}}
                                     <div class="input-group input-group-sm mb-3">
-                                        <input placeholder="min" type="number" class="form-control"
+                                        <input placeholder="Search Mentor" type="text" class="form-control"
                                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                                            name="min" min="0" id="min" value="0">
-                                        {{-- <input placeholder="max" type="number" class="form-control"
-                                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                                            name="max" min="1" id="max" value="1"> --}}
-                                        <span class="input-group-text" id="inputGroup-sizing-sm"><button class="border-0"
-                                                type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></span>
+                                            name="mentor">
+                                        {{-- <span class="input-group-text" id="inputGroup-sizing-sm"><button class="border-0"
+                                                type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></span> --}}
                                     </div>
-                                </form>
+                                </li>
+                            </div>
+                            <li class="filter-item">Jumlah Enroll</li>
+                            <li class="collapse-li">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="min" id="min0"
+                                        value="0" checked>
+                                    <label class="form-check-label" for="min0">
+                                        > 0
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="min" id="min1"
+                                        value="5">
+                                    <label class="form-check-label" for="min1">
+                                        > 5
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="min" id="min2"
+                                        value="10">
+                                    <label class="form-check-label" for="min2">
+                                        > 10
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="min" id="min2"
+                                        value="50">
+                                    <label class="form-check-label" for="min2">
+                                        > 50
+                                    </label>
+                                </div>
                             </li>
-                        </div>
-                        <hr>
+                            <button class="btn btn-primary mt-2" type="submit"
+                                style="background-color:#B48BF0;border:none;width:100%">Apply Filter
+                            </button>
+                        </form>
                     </ul>
+                    <hr>
                 </div>
             </div>
             <div class="col">
