@@ -24,12 +24,8 @@
                             </center>
                             <a href="/edit/materi/{{ $item->judul }}" class="btn b-editcourse"><i
                                     class="fa-regular fa-pen-to-square"></i></a>
-                            <form action="/playlist/{{ $item->id }}" method="post">
-                                @method('delete')
-                                @csrf
-                                <button class="btn b-deletecourse" type="submit"><i
-                                        class="fa-regular fa-trash-can"></i></button>
-                            </form>
+                            <a href="/playlist/{{ $item->id }}/delete" class="btn b-deletecourse" type="submit"><i
+                                    class="fa-regular fa-trash-can"></i></a>
                             <div class="card-body">
                                 @if (isset($item->video[0]))
                                     <a class="nav-link"

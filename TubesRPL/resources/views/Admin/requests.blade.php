@@ -53,7 +53,7 @@
                                         <td><a class="fs-5" href="/storage/cv/{{ $request->cv }}"><i
                                                     class="fa-solid fa-file-arrow-down"></i></a>
                                         </td>
-                                        <td><a class="fs-5" href="/storage/cv/{{ $request->pi }}"><i
+                                        <td><a class="fs-5" href="/storage/pi/{{ $request->pi }}"><i
                                                     class="fa-solid fa-file-arrow-down"></i></a>
                                         </td>
                                         <td>

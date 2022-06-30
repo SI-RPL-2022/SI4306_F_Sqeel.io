@@ -82,7 +82,7 @@ Route::middleware(['auth', 'CekRole:2', 'CekRequest:done'])->group(function () {
 });
 
 Route::middleware(['auth', 'CekRole:2,3'])->group(function () {
-    Route::delete('/playlist/{playlist:id}', [PlaylistController::class, 'destroy']);
+    Route::get('/playlist/{playlist:id}/delete', [PlaylistController::class, 'destroy']);
     Route::get('/video/{video:idvideo}/delete', [VideoController::class, 'destroy']);
 });
 

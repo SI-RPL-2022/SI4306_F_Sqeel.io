@@ -165,7 +165,7 @@ class PlaylistController extends Controller
      */
     public function destroy(playlist $playlist)
     {
-        if (auth()->user()->user_id == $playlist->user_id or auth()->user()->role_id == 3) {
+        if (auth()->user()->id == $playlist->user_id or auth()->user()->role_id == 3) {
             $playlist->delete();
             if (auth()->user()->role_id == 2) {
                 return redirect('/mentor/mycourse/');
